@@ -1,0 +1,24 @@
+
+.button {
+    border-radius: 15px;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    color: blanchedalmond;
+    transition: 2s;
+}
+
+.button.primary {
+    background: rgb(29, 155, 240);
+}
+.button.primary:hover {
+    background: rgb(26, 140, 216);
+}
+
+.button.secondary{
+    background: transparent;
+}
+
+.button.secondary:hover {
+    background: rgba(217, 217, 217, 0.1);
+}
