@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import user from '@testing-library/user-event'
-import Button from "./button/button";
+import Button from "./button";
 
 it('should render the button with indicated text', () => {
     const text = 'click';
