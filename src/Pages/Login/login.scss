@@ -1,0 +1,89 @@
+$bg-color:rgba(244, 244, 244, 0.52);
+$bg-white: rgb(255,255,255);
+$blue-color: #008F83;
+$text-color: rgb(0 , 0 , 0);
+$font-family: 'Montserrat', sans-serif;
+
+@mixin align {
+    text-align:center;  
+    justify-content:center;
+}
+
+.mainBox {
+    background: $bg-color;
+    height: 100%;
+    width: 100%;
+}
+
+.imgLogo {
+    height: 38vh;
+    width: 80vw;
+    margin: 0vh 4vh;
+}
+
+.title {
+    @include align;
+    font-family: $font-family;
+    font-size: 1.6em;
+    font-style: normal;
+    font-weight: 1000;
+    text-transform: uppercase;
+    color: $blue-color;
+    margin: 4vh 0 5vh;
+}
+
+.form {
+    @include align;
+}
+
+.buttonLogin {
+    width: 32vh;
+    height: 20vh;
+    margin: 0;
+    display: flex;
+}
+
+.phraseLogin {
+    @include align;
+    font-family: $font-family;
+    font-size: 1.1em;
+    margin: 4vh 3vh;
+        a {
+            color: $text-color;
+            font-weight: bold;
+            text-decoration: none;
+        }
+}
+
+@media screen and (min-width: 768px) {
+    .mainBox {
+        display: flex;
+        margin: 10rem 0 0 0;
+    }
+
+    .loginBox { 
+        @include align;
+        display: flex;
+        flex-wrap: wrap;
+        width: 40vw;
+        height: 65vh;
+        background-color: $bg-white;
+        border: 1px solid $blue-color;
+        border-radius: 20px;   
+        margin: -20px;        
+    }
+
+    .imgLogo {
+        width: 60vw;
+        height: 70vh;
+        margin: -20px;
+    }
+}
+
+@media screen and (min-width: 1180px){
+    .imgLogo {
+        width: 50vw;
+        height: 65vh;
+    }
+    
+}
