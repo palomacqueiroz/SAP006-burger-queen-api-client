@@ -1,20 +1,194 @@
+$white: #FFFF;
+$btnColor: #008F83;
+$nameItemColor: #5168EE;
+$fontFamily: 'Montserrat', sans-serif;
+$font600: 600;
+
+// CartList.jsx
 .section-ordersList {
     border-radius: 6.47px;
     border: solid #ebebeb 2px;
-    background-color: #FFFFFF;
+    background-color: $white;
     height: 50vh;
     width: 35vh;
     margin: 4vh;
     padding: 3vh;
     text-align: center;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 801px){
+        background: rgba(81, 104, 238, 0.07);
+        border-radius: 42px 0px 0px 42px;
+        width: auto;
+        height: 81vh;
+        margin: 0;
+        padding: 3; 
+    }
+
 }
 
-.text-ordersList {
+.text-orders {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
+.text-ordersList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 70%;
+}
+
 .btn-confirmOrder {
     font-size: 0.3rem;
+}
+
+// ItemCard.jsx
+
+    // ItemCard
+.item-card {
+    height: 25vh;
+    width: 19vh;
+    margin: 1vh;
+    padding: 9px 0px 0px 5px;
+    border-radius: 6.42px;
+    font-family: Montserrat;
+    font-weight: $font600;
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #5168EE;
+    background-color: $white;
+    box-shadow: 0px 5.13419px 5.13419px rgba(0, 0, 0, 0.25);
+
+    @media screen and (min-width:801px) {
+        height: 35vh;
+        width: 30vh;
+        margin: 1vh;
+        padding: 9px 0px 0px 5px;
+        border-radius: 6.42px;
+        font-size: 0.5rem;
+    }
+    
+}
+
+.product-info.name {
+    margin: 1.5vh 0vh;
+    font-weight: bold;
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+    color: $nameItemColor;
+}
+
+.price {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #44433E;
+    text-align: center;
+}
+
+.img-product-info {
+    width: 17vh;
+    height: 15vh;
+    object-fit: fill;
+    border-radius: 9px;
+
+    @media screen and (min-width:801px) {
+        width: 25vh;
+        height: 20vh;   
+    }
+}
+
+.product-info {
+    font-family: $fontFamily;
+    font-style: normal;
+    line-height: 1vh;
+    margin: 0;
+}
+
+.product-info p {
+    margin-top: 1vh;
+}
+
+.btn-addItem {
+    background: $btnColor;
+    border-radius: 19.9951px 6.42064px 6.42064px 6.42064px;
+    font-family: $fontFamily;
+    font-weight: $font600;
+    font-size: 2rem;
+    line-height: 32px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: $white;
+    border: none;
+    height: 5vh;
+    width: 5vh;
+    cursor: pointer;
+
+    @media screen and (min-width:801px) {
+        width: 8vh;
+        height: 8vh;   
+    }
+}
+
+.footer-card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    // SelectedItem
+.itemSelected {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #44433E;
+}
+
+.info-item {
+    width: 40%;
+    font-size: 1.1rem;
+}
+
+.buttons-qtd {
+    width: 30%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+}
+
+.btn-addItem-qtd {
+    background: $btnColor;
+    border-radius: 6.42064px;
+    font-weight: $font600;
+    font-size: 1.4rem;
+    line-height: 32px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: $white;
+    border: none;
+    height: 4vh;
+    width: 4vh;
+    cursor: pointer;
 }

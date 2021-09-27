@@ -2,13 +2,15 @@
 $btn-blue: rgb(171, 218, 214);
 $btn-white: rgb(255, 255, 255);
 $text-color: rgb(0 , 0 , 0);
+$font-1em: 1em;
 
 
-@mixin buttonProps {
+@mixin buttonProps() {
     width: 150px;
     height: 42px;
     font-size: 1.3em;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;    
     text-transform: uppercase;
     justify-content: center;
@@ -16,7 +18,6 @@ $text-color: rgb(0 , 0 , 0);
     border-radius: 10px;
     cursor: pointer;
 }
-
 
 .button {
     @include buttonProps;
@@ -34,22 +35,116 @@ $text-color: rgb(0 , 0 , 0);
     @include buttonProps;
     background-color: $btn-blue;
     width: 70%;
-    font-size: 1em;
-    margin: 4rem 4rem 3rem;   
-
+    font-size: $font-1em;
+    margin: 4rem 4rem 3rem;
 }
 
 .button.secondary{
     @include buttonProps;
     background-color: $btn-blue;
     width: 70%;
-    font-size: 1em;
+    font-size: $font-1em;
     margin: 2rem 4rem 3rem;
+}
+
+.button.third {
+    @include buttonProps;
+    color: #008F83;
+    width: max-content;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #FDFDFD;
+    border-radius: 6.31469px;
+    padding: 2.5vh;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button.third:active {
+    background-color: #008F83;
+    color: $btn-white;
+}
+
+// .button.third::after {
+//     border: 1px solid #008F83;
+// }
+
+.button.fourth {
+    @include buttonProps;
+    color: #008F83;
+    width: max-content;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 2.5vh 1vh;
+}
+
+.button.fifth {
+    @include buttonProps;
+    background-color: #008F83;
+    color: white;
+    width: max-content;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 2.5vh 1vh;
+}
+
+.button.sixth {
+    @include buttonProps;
+    background: #FFFFFF;
+    color: #008F83;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin: 0vh 1vh;
+    height: 9vh;
+    width: 13vh;
+}
+
+.button.seventh {
+    @include buttonProps;
+    background: #FFFFFF;
+    color: #5168EE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin: 0vh 1vh;
+    height: 9vh;
+    width: 13vh;
+}
+
+.button.eigth {
+    @include buttonProps;
+    background: #FFFFFF;
+    color: #FF7859;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin: 1vh 0vh;
+    height: 6vh;
+    width: 32vh;
+}
+
+.button.nineth {
+    @include buttonProps;
+    color: #FFFFFF;
+    background-color: #5168EE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 1vh 0vh;
+    height: 6vh;
+    width: max-content;
 }
 
 @media screen and (min-width: 768px){
     .button.secondary{ 
-        margin:2rem;
+        margin: 2rem;
     }
 }
 @media screen and (min-width: 1180px){

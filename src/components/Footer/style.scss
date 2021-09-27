@@ -8,18 +8,28 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @media screen and (min-width: 801px){
+        display: none;
+    }
+    
+    @media screen and (min-width:600px) {
+        display: none;
+    }
 }
 
 .img-icon-footer {
     width: 7vh;
-    height: 7vh;
+    height: 6.6vh;
 }
 
 .img-icon-footer-table {
     width: 8vh;
-    height: 10vh;
+    height: 9.5vh;
 }
 
 .btn-logout {
     background-color: #6b51ee;
+    border: none;
+    cursor: pointer;
 }
