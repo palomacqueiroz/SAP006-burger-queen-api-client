@@ -9,25 +9,22 @@ import Header from '../../components/Header/Header';
 import './style.scss';
 
 const Menu = ()  => {
+    // const[total, setTotal] = useState(0);
+    // const [orders, setOrders] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
-    // const [orders, setOrders] = useState([]);
     const [burger, setBurger] = useState([])
     const [addItem, setAddItem] = useState([]);
-    const[total, setTotal] = useState(0);
+    const [removeItem, setRemoveItem] = useState([]);
     const [values, setValues] = useState({
         'mesa': '',
         'cliente': '', 
     })
 
     const token = getStorageKey();
-    useEffect(() => {
-        addItemOnCart()
-    }, [addItem]) // eslint-disable-line
 
     useEffect(() => {
         GetProducts()
-
         .then((res) => {                    
             console.log(res)
             setProducts(res)
@@ -44,8 +41,8 @@ const Menu = ()  => {
     const handleClick = (meal) => { 
         const selectedMenu = products.filter((item) => item.type === meal)
         setSelectedProducts(selectedMenu)  
-        const compileBurger = products.filter((item) => item.sub_type === 'hamburguer')
-        setBurger(compileBurger)     
+        // const compileBurger = products.filter((item) => item.sub_type === 'hamburguer')
+        // setBurger(compileBurger)     
     }
 
     const handleChange = (event) => {
@@ -57,26 +54,52 @@ const Menu = ()  => {
         console.log(value);
     }
 
-    const removeItemOnCart = (item) => {
-        console.log(item);
+    const removeItemOfCart = (item) => {
+        console.log(item, 'console do item');
+        const removeItemArray = [removeItem];
+        console.log(removeItem, 'console do removeItem');
+
+        const countElement = removeItemArray.find(element => element.id === item.id)
+        console.log(item.id);
+        console.log(countElement, 'console do countElement');
+        if(countElement >= 1) {
+            countElement.qtd -= 1
+            setRemoveItem(itemArray => itemArray.map(
+                itemProduct => itemProduct.id === countElement.id ? countElement : itemProduct)
+            )
+            console.log(setRemoveItem, 'console do setRemoveItem');
+        } else if (countElement === 0){
+            console.log(countElement, 'console do countElement no else if');
+            console.log('caiu no else do removeItemOfCart');
+            setRemoveItem([...removeItem]);
+        }
     }
     
-    const addItemOnCart = () => {
+    const addItemOnCart = (item) => {
+        console.log(item);
+        const addItemArray = addItem;
+        console.log(addItem);
 
-        let countTypes = addItem.reduce(function (allTypes, atualType) {
-        
-
-            if (allTypes[atualType.name]) {
-                allTypes[atualType.name].qtd++;
-            } else {
-                allTypes[atualType.name] = atualType;
-                console.log(allTypes);
-                console.log(atualType);
+        const countElement = addItemArray.find(element => element.id === item.id)
+        console.log(countElement);
+        if(countElement) {
+            countElement.qtd += 1
+            setAddItem(itemArray => itemArray.map(
+                itemProduct => itemProduct.id === countElement.id ? countElement : itemProduct)
+            )
+        } else {
+            console.log('caiu no else do addItemOnCart');
+            const newItem = { 
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                flavor: item.flavor,
+                complement: item.complement,
+                qtd: 1,
             }
-            return allTypes;
-        }, {})
-        // console.log(countTypes);
-        return countTypes;
+            console.log(newItem);
+            setAddItem([...addItem, newItem])
+        }
     }
 
     return (
@@ -100,18 +123,8 @@ const Menu = ()  => {
                                     img={item.image}
                                     flavor={item.flavor}
                                     complement={item.complement}
-                                    onClick={() => {
-                                        setAddItem([...addItem, 
-                                            {
-                                                id: item.id,
-                                                name: item.name,
-                                                price: item.price,
-                                                image: item.image,
-                                                flavor: item.flavor,
-                                                complement: item.complement,
-                                                qtd: 1,
-                                            }
-                                        ])
+                                    addItemOnCart={() => {
+                                        addItemOnCart(item)
                                     }}
                                 />  
                             )
@@ -121,21 +134,12 @@ const Menu = ()  => {
                 <div className="right-side cartList-display">
                     <section className="section-ordersList">
                         <article className="text-orders">
-                            <h3>Pedidos</h3>
-                            <form>
-                                <select name="Mesa">
-                                    <option>Escolha a mesa</option>
-                                    <option name="1" value="1" onChange={handleChange}>1</option>
-                                    <option name="2" value="2" onChange={handleChange}>2</option>
-                                    <option name="3" value="3" onChange={handleChange}>3</option>
-                                    <option name="4" value="4">4</option>
-                                    <option name="5" value="5">5</option>
-                                    <option name="6" value="6">6</option>
-                                    <option name="7" value="7">7</option>
-                                    <option name="8" value="8">8</option>
-                                    <option name="9" value="9">9</option>
-                                </select>
-                                <input className="input-clientName" name="cliente" data-name="input-clientName" type="text" placeholder="Nome do Cliente" onChange={handleChange}/>
+                            <h3 className="title-orders">Pedidos</h3>
+                            <form className="form-inputs-order">
+                                <label>Mesa</label>
+                                <input className="input-order table" value={values.mesa} name="mesa" data-name="input-table" type="number" min="1" max="9" placeholder="0" onChange={handleChange}/> <br />
+                                <label>Cliente</label>
+                                <input className="input-order clientName" value={values.cliente} name="cliente" type="text" autoComplete="off" onChange={handleChange}/>
                             </form>
                         </article>
                         <article className="text-ordersList">
@@ -145,18 +149,17 @@ const Menu = ()  => {
                                         key={item.id}
                                         name={item.name}
                                         price={item.price}
-                                        // pricePerQtd={}
                                         flavor={item.flavor}
                                         complement={item.complement}
                                         qtd={item.qtd}
-                                        removeItemOnCart={() => removeItemOnCart(item)}
-                                        addItemOnCart={() => addItemOnCart()}
+                                        removeItemOfCart={() => removeItemOfCart(item)}
+                                        addItemOnCart={() => addItemOnCart(item)}
                                     />
                                 )
                             })}
                         </article>                        
-                        <p>Total: R$ {totalPrice} </p>
                         <hr/>
+                        <p>Total: R$ {totalPrice} </p>
                         <GeneralButton variant="fifth"  className="btn-confirmOrder">
                             Confirmar pedido
                         </GeneralButton>

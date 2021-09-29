@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { getStorageKey } from './storage';
 
 export const GetProducts = async () => {
@@ -16,10 +15,9 @@ export const GetProducts = async () => {
     
 }
 
+export const createOrder = async (order, item) => {
 
-export const createOrder = (order, item) => {
-
-    return fetch('https://lab-api-bq.herokuapp.com/orders', {
+    return await fetch('https://lab-api-bq.herokuapp.com/orders', {
         method:'POST',
         headers: {
             'Content-Type': 'application/json',
