@@ -1,6 +1,6 @@
 import { getStorageKey } from './storage';
 
-export const GetProducts = async () => {
+export const getProducts = async () => {
     const token = getStorageKey();
 
     return await fetch('https://lab-api-bq.herokuapp.com/products', {
@@ -11,12 +11,13 @@ export const GetProducts = async () => {
             }
         })
             .then(response => response.json())
-            .catch((error) => console.log(error, 'erro ao acessar a API de produtos'))
+            .catch((error) => console.log(error, 'Erro ao acessar a API de produtos'))
     
 }
 
-export const createOrder = async (order, item) => {
 
+export const CreateOrder = async (order, item) => {
+    
     return await fetch('https://lab-api-bq.herokuapp.com/orders', {
         method:'POST',
         headers: {
@@ -28,13 +29,12 @@ export const createOrder = async (order, item) => {
             "table": order.table,
             "products": [
                 {
-                "id": item.id,
-                "qtd": item.qtd
+                    "id": item.id,
+                    "qtd": item.qtd
                 }
             ]
         })
     })
-        .then(response => response.json())
-        .catch((error) => console.log(error, 'Erro ao criar o pedido'))
-
+    .then(response => response.json())
+    .catch((error) => console.log(error, 'Erro ao criar o pedido'))
 }

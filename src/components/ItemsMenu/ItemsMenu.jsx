@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './style.scss'
 
 export const ItemCard = ({id, name, price, img, flavor, complement, addItemOnCart}) => {
@@ -30,13 +30,13 @@ export const ItemCard = ({id, name, price, img, flavor, complement, addItemOnCar
                         display: flavor ? 'flex' : 'none'
                     }}
                 ></span>
-                <select name="saborSelect" className="product-info flavor" value="{flavor}">
+                <select name="saborSelect" className="product-info flavor" value="" onChange={handleChange}>
                     <option value="sabor">sabor</option>
                     <option name="sabor" value={flavor}>{`${flavor !== null ? flavor : ''}`}</option>
                 </select>
-                <select name="complementoSelect" className="product-info complement" value="{complement}">
-                    <option name="adicional" value="adicional" onChange={handleChange}>adicional</option>
-                    <option name="complemento" value={complement} onChange={handleChange}>{`${complement !== null ? complement : ''}`}</option>
+                <select name="complementoSelect" className="product-info complement" value="" onChange={handleChange}>
+                    <option name="adicional" value={values.adicional}>adicional</option>
+                    <option name="complemento" value={values.complemento} >{`${complement !== null ? complement : ''}`}</option>
                 </select>
             </form>
             <div className="footer-card">
@@ -62,7 +62,7 @@ export const SelectedItem = ({id, name, price, flavor, complement, qtd, removeIt
                 <button 
                     className="btn-addItem-qtd"
                     data-remove={id} 
-                    onClick={removeItemOfCart}>        
+                    onClick={removeItemOfCart}>
                 -</button>
                 <p className="product-info">{qtd}</p>
                 <button 
@@ -81,13 +81,10 @@ export const totalPrice = (value) => {
 }
 
 export const Total = ({ cartItems }) => {
-    const [total, setTotal] = useState(0);
   
-    useEffect(() => {
-      const newTotal = cartItems.reduce((acc, cur) => acc + (cur.price * cur.qtd), 0);
-      setTotal(newTotal);
-    }, [cartItems]);
+      const newTotal = cartItems.reduce((acc, currentValue) => 
+        acc + (currentValue.price * currentValue.qtd), 0);
   
-    return <div className="CartTotal">Total: {(total)}</div>;
+    return <div className="CartTotal">Total: {newTotal}</div>;
   };
   
