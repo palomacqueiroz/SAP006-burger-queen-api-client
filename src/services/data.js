@@ -1,26 +1,24 @@
-import { useEffect } from 'react';
 import { getStorageKey } from './storage';
 
-export const GetProducts = () => {
+export const getProducts = async () => {
     const token = getStorageKey();
 
-    useEffect(() => {
-        fetch('https://lab-api-bq.herokuapp.com/products', {
-                method:'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': token,
-                }
-            })
-                .then(response => response.json())
-                .catch((error) => console.log(error, 'erro ao acessar a API de produtos'))
-    }, [token])
+    return await fetch('https://lab-api-bq.herokuapp.com/products', {
+            method:'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token,
+            }
+        })
+            .then(response => response.json())
+            .catch((error) => console.log(error, 'Erro ao acessar a API de produtos'))
+    
 }
 
 
-export const createOrder = (order, item) => {
-
-    return fetch('https://lab-api-bq.herokuapp.com/orders', {
+export const CreateOrder = async (order, item) => {
+    
+    return await fetch('https://lab-api-bq.herokuapp.com/orders', {
         method:'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -31,13 +29,12 @@ export const createOrder = (order, item) => {
             "table": order.table,
             "products": [
                 {
-                "id": item.id,
-                "qtd": item.qtd
+                    "id": item.id,
+                    "qtd": item.qtd
                 }
             ]
         })
     })
-        .then(response => response.json())
-        .catch((error) => console.log(error, 'Erro ao criar o pedido'))
-
+    .then(response => response.json())
+    .catch((error) => console.log(error, 'Erro ao criar o pedido'))
 }
