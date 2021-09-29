@@ -16,7 +16,7 @@ const Menu = ()  => {
     // const [burger, setBurger] = useState([])
     const [itemsList, setItemsList] = useState([]);
 
-    const [addItem, setAddItem] = useState([]);
+    // const [addItem, setAddItem] = useState([]);
     // const [removeItem, setRemoveItem] = useState([]);
     const [values, setValues] = useState({
         'mesa': '',
