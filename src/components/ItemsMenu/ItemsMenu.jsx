@@ -1,44 +1,15 @@
-import { useState } from 'react';
 import './style.scss'
 
 export const ItemCard = ({id, name, price, img, flavor, complement, addItemOnCart}) => {
-    const [values, setValues] = useState({
-        'sabor': '',
-        'adicional': '', 
-        'complemento': '',
-    })
-
-    const handleChange = (event) => {
-        setValues({
-            ...values,
-            [event.target.name]: event.target.value, 
-        })
-    }
 
     return (
         <article className="item-card" key={id}>
             <img src={img} alt="Imagem do produto" className="img-product-info"></img>
-            <span
-                style={{
-                    display: 'Hambúrguer' ? 'flex' : 'none'
-                }}
-                ></span>
             <p className="product-info name">{name}</p>
-            <form>
-                <span
-                    style={{
-                        display: flavor ? 'flex' : 'none'
-                    }}
-                ></span>
-                <select name="saborSelect" className="product-info flavor" value="" onChange={handleChange}>
-                    <option value="sabor">sabor</option>
-                    <option name="sabor" value={flavor}>{`${flavor !== null ? flavor : ''}`}</option>
-                </select>
-                <select name="complementoSelect" className="product-info complement" value="" onChange={handleChange}>
-                    <option name="adicional" value={values.adicional}>adicional</option>
-                    <option name="complemento" value={values.complemento} >{`${complement !== null ? complement : ''}`}</option>
-                </select>
-            </form>
+            <section>
+                <p value="sabor">{flavor}</p>
+                <p name="complemento" >{`${complement !== null ? complement : ''}`}</p>
+            </section>
             <div className="footer-card">
                 <p className="product-info price">R$ {price}</p>
                 <button className="btn-addItem" onClick={addItemOnCart}>+</button>
@@ -74,17 +45,13 @@ export const SelectedItem = ({id, name, price, flavor, complement, qtd, removeIt
             <p className="product-info price">R$ {price}</p>
         </article>
     )
-}
-
-export const totalPrice = (value) => {
-    value.reduce((priceItem, item) => (priceItem * item.qtd), 0)
-}
+};
 
 export const Total = ({ cartItems }) => {
   
-      const newTotal = cartItems.reduce((acc, currentValue) => 
+    const newTotal = cartItems.reduce((acc, currentValue) => 
         acc + (currentValue.price * currentValue.qtd), 0);
   
-    return <div className="CartTotal">Total: {newTotal}</div>;
-  };
+    return <div className="CartTotal">Total: R$ {newTotal}</div>;
+};
   

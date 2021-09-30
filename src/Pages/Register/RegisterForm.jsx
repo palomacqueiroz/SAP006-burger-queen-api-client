@@ -6,8 +6,7 @@ import validation from '../../services/errors';
 import { getRouteByRole } from '../../routes/redirections';
 
 import GeneralButton from '../../components/Button/Button';
-import { Input }  from '../../components/Input/Input.jsx'
-
+import { Input }  from '../../components/Input/Input.jsx';
 import register from '../../Assets/register.png';
 import './register.scss';
 
