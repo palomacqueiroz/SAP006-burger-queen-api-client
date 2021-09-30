@@ -45,12 +45,7 @@ const Register = () => {
                 }
                 const route = getRouteByRole(values.role);
                 history.push(route);
-            })
-            // .then((json) => {
-            //     const token = localStorage.getItem('token')
-            //     console.log(token);
-               
-            // })
+            })            
             .catch((error) => {
                 console.log(error);
             })
