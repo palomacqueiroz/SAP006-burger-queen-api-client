@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { getStorageKey} from '../../services/storage'
 import { getProducts }from '../../services/data'
 import { ItemCard, SelectedItem, Total } from '../../components/ItemsMenu/ItemsMenu'
+import Modal from '../../components/ItemsMenu/ModalCart'
+import {SubmitToKitchenConfirm} from '../../components/ItemsMenu/PopUpConfirm'
 import MenuOptionsNavBar from '../../components/Footer/NavBarOptions';
 import GeneralButton from '../../components/Button/Button';
 // import MealNavBar from '../../components/Header/MealNavBar'
@@ -9,15 +11,11 @@ import Header from '../../components/Header/Header';
 import './style.scss';
 
 const Menu = ()  => {
-    // const[total, setTotal] = useState(0);
     // const [orders, setOrders] = useState([]);
     const [products, setProducts] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
     // const [burger, setBurger] = useState([])
     const [itemsList, setItemsList] = useState([]);
-
-    const [addItem, setAddItem] = useState([]);
-    // const [removeItem, setRemoveItem] = useState([]);
     const [values, setValues] = useState({
         'mesa': '',
         'cliente': '', 
@@ -55,6 +53,25 @@ const Menu = ()  => {
         console.log(value);
     }
 
+    const [dropdown, setDropdown] = useState("");
+    const modalRef = useRef(null)
+
+    const toggleDropdown = () => {
+        console.log("show");
+        setDropdown("show");
+        document.body.addEventListener("click", closeDropdown);
+    }
+
+    const closeDropdown = event => {
+        event.stopPropagation();
+        const contain = modalRef.current
+        if(!contain) {
+            console.log("hidden");
+            setDropdown("");
+            document.body.removeEventListener("click", closeDropdown)
+        }
+    }
+
     const deleteItem = (id) => {
         const index = itemsList.findIndex((item) => item.id === id)
         const updatedItemsList = [...itemsList]
@@ -76,24 +93,6 @@ const Menu = ()  => {
         }
     }
 
-    // const removeItem = (item) => {
-    //     if (item.qtd > 1) {
-    //     return setItemsList((prevItems) => prevItems.map((prevItem) => {
-    //         if (prevItem.id === item.id) {
-    //         return {
-    //             ...prevItem,
-    //             qtd: prevItem.qtd - 1
-    //         }
-    //         }
-    //         return prevItem
-    //     }))
-    //     }
-    
-    //     return setItemsList((prevItems) => prevItems
-    //     .filter((prevItem) => prevItem.id !== item.id)
-    //     )
-    // }
-
     const addItemOnCart = (item) => {
         const countElement = itemsList.find(element => element.id === item.id)
 
@@ -114,32 +113,6 @@ const Menu = ()  => {
             setItemsList([...itemsList, newItem])
         }
     }
-
-    // const addItem = (item) => {
-    //     const hasElement = itemsList.some(({ id }) => id === item.id);
-      
-    //     if (hasElement) {
-    //       return setItemsList((prevItems) => prevItems.map((prevItem) => {
-    //         if (prevItem.id === item.id) {
-    //           return {
-    //             ...prevItem,
-    //             qtd: prevItem.qtd + 1
-    //           }
-    //         }
-    //         return prevItem
-    //       }))
-    //     }
-      
-    //     const newItem = {
-    //       id: item.id,
-    //       name: item.name,
-    //       price: item.price,
-    //       flavor: item.flavor,
-    //       complement: item.complement,
-    //       qtd: 1,
-    //     }
-    //     return setItemsList([...itemsList, newItem])
-    //   }
 
     return (
         <>
@@ -171,6 +144,10 @@ const Menu = ()  => {
                     </section>
                 </div>
                 <div className="right-side cartList-display">
+                    <section className="ordersList-modal">
+                        <button onClick={toggleDropdown}>Carrinho</button>
+                        <Modal className={dropdown} modalRef={modalRef}/>
+                    </section>
                     <section className="section-ordersList">
                         <article className="text-orders">
                             <h3 className="title-orders">Pedidos</h3>
@@ -199,7 +176,7 @@ const Menu = ()  => {
                         </article>                        
                         <hr/>
                         <Total cartItems={itemsList} />
-                        <GeneralButton variant="fifth" className="btn-confirmOrder">
+                        <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={SubmitToKitchenConfirm()}>
                             Confirmar pedido
                         </GeneralButton>
                     </section>
@@ -211,3 +188,48 @@ const Menu = ()  => {
 };
 
 export default Menu;
+
+// Rafa's alternatives functions for addItem and removeItem:
+    // const removeItem = (item) => {
+    //     if (item.qtd > 1) {
+    //     return setItemsList((prevItems) => prevItems.map((prevItem) => {
+    //         if (prevItem.id === item.id) {
+    //         return {
+    //             ...prevItem,
+    //             qtd: prevItem.qtd - 1
+    //         }
+    //         }
+    //         return prevItem
+    //     }))
+    //     }
+    
+    //     return setItemsList((prevItems) => prevItems
+    //     .filter((prevItem) => prevItem.id !== item.id)
+    //     )
+    // }
+
+    // const addItem = (item) => {
+    //     const hasElement = itemsList.some(({ id }) => id === item.id);
+      
+    //     if (hasElement) {
+    //       return setItemsList((prevItems) => prevItems.map((prevItem) => {
+    //         if (prevItem.id === item.id) {
+    //           return {
+    //             ...prevItem,
+    //             qtd: prevItem.qtd + 1
+    //           }
+    //         }
+    //         return prevItem
+    //       }))
+    //     }
+      
+    //     const newItem = {
+    //       id: item.id,
+    //       name: item.name,
+    //       price: item.price,
+    //       flavor: item.flavor,
+    //       complement: item.complement,
+    //       qtd: 1,
+    //     }
+    //     return setItemsList([...itemsList, newItem])
+    //   }

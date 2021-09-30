@@ -76,15 +76,11 @@ export const SelectedItem = ({id, name, price, flavor, complement, qtd, removeIt
     )
 }
 
-export const totalPrice = (value) => {
-    value.reduce((priceItem, item) => (priceItem * item.qtd), 0)
-}
-
 export const Total = ({ cartItems }) => {
   
-      const newTotal = cartItems.reduce((acc, currentValue) => 
+    const newTotal = cartItems.reduce((acc, currentValue) => 
         acc + (currentValue.price * currentValue.qtd), 0);
   
-    return <div className="CartTotal">Total: {newTotal}</div>;
+    return <div className="CartTotal">Total: R$ {newTotal}</div>;
   };
   

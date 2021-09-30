@@ -6,6 +6,7 @@ import './style.scss';
 import menu from '../../Assets/menu.png'
 import status from '../../Assets/orders-status.png'
 import logout from '../../Assets/logout.png'
+import { Icon } from '@iconify/react';
 
 const MenuOptionsNavBar = () => {
     const history = useHistory();
@@ -19,6 +20,9 @@ const MenuOptionsNavBar = () => {
         <footer className="footer-section-menu">
             <Link to='/menu'>
                 <img className="img-icon-footer" src={menu} alt="menu icon"/>
+            </Link>
+            <Link to='/menu'>
+                <Icon icon="bytesize:cart" color="white" />
             </Link>
             <Link to='/orders-status'>
                 <img className="img-icon-footer" src={status} alt="orders status icon"/>
