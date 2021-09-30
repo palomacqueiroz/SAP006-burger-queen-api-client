@@ -44,25 +44,3 @@ export const loginWithEmail = async (user) => {
         })
         .catch((error) => console.log(error, 'erro de token na LoginWithEmail'))
 };
-
-
-
-
-
-
-
-
-
-
-// function getAPI (endpoint) {
-//     return fetch(`https://lab-api-bq.herokuapp.com/${endpoint}`, {
-
-//     }) 
-//         .then(function(response) {
-
-//         })
-//         .then(function(res) {
-
-//         })
-// } 
-    

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getStorageKey} from '../../services/storage'
-import { getProducts }from '../../services/data'
+import { getProducts } from '../../services/data'
 import { ItemCard, SelectedItem, Total } from '../../components/ItemsMenu/ItemsMenu'
+// import {SubmitToKitchenConfirm} from '../../components/ItemsMenu/PopUpConfirm'
 import MenuOptionsNavBar from '../../components/Footer/NavBarOptions';
 import GeneralButton from '../../components/Button/Button';
 // import MealNavBar from '../../components/Header/MealNavBar'
@@ -9,41 +10,37 @@ import Header from '../../components/Header/Header';
 import './style.scss';
 
 const Menu = ()  => {
-    // const[total, setTotal] = useState(0);
-    // const [orders, setOrders] = useState([]);
     const [products, setProducts] = useState([]);
+    // const [orders, setOrders] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
-    // const [burger, setBurger] = useState([])
     const [itemsList, setItemsList] = useState([]);
-
-    const [addItem, setAddItem] = useState([]);
-    // const [removeItem, setRemoveItem] = useState([]);
     const [values, setValues] = useState({
-        'mesa': '',
-        'cliente': '', 
+        'table': '',
+        'client': '', 
     })
 
     const token = getStorageKey();
 
     useEffect(() => {
         getProducts()
-        .then((res) => {                    
+        .then((res) => {
             setProducts(res)
             const breakfast = res.filter((item) => item.type === 'breakfast')
             setSelectedProducts(breakfast)
-            // const burger = res.filter((item) => item.sub_type === 'hamburguer')
-            // setBurger(burger);
-
+            const burger = res.filter((item) => item.sub_type === 'hamburguer')
+            setSelectedProducts(burger)                       
+            const drinks = res.filter(item => item.sub_type === 'drinks')
+            setSelectedProducts(drinks)
+            const side = res.filter(item => item.sub_type === 'side')
+            setSelectedProducts(side)
             return res;
         })
         .catch((error) => console.log(error, 'Erro ao acessar a lista de produtos'))
     }, [token])
 
-    const handleClick = (meal) => { 
-        const selectedMenu = products.filter((item) => item.type === meal)
-        setSelectedProducts(selectedMenu)  
-        // const compileBurger = products.filter((item) => item.sub_type === 'hamburguer')
-        // setBurger(compileBurger)     
+    const handleClick = (productsCategory) => { 
+        const selectedMenu = products.filter((item) => item.type === productsCategory || item.sub_type === productsCategory)
+        setSelectedProducts(selectedMenu)             
     }
 
     const handleChange = (event) => {
@@ -76,24 +73,6 @@ const Menu = ()  => {
         }
     }
 
-    // const removeItem = (item) => {
-    //     if (item.qtd > 1) {
-    //     return setItemsList((prevItems) => prevItems.map((prevItem) => {
-    //         if (prevItem.id === item.id) {
-    //         return {
-    //             ...prevItem,
-    //             qtd: prevItem.qtd - 1
-    //         }
-    //         }
-    //         return prevItem
-    //     }))
-    //     }
-    
-    //     return setItemsList((prevItems) => prevItems
-    //     .filter((prevItem) => prevItem.id !== item.id)
-    //     )
-    // }
-
     const addItemOnCart = (item) => {
         const countElement = itemsList.find(element => element.id === item.id)
 
@@ -113,34 +92,8 @@ const Menu = ()  => {
             }
             setItemsList([...itemsList, newItem])
         }
-    }
-
-    // const addItem = (item) => {
-    //     const hasElement = itemsList.some(({ id }) => id === item.id);
-      
-    //     if (hasElement) {
-    //       return setItemsList((prevItems) => prevItems.map((prevItem) => {
-    //         if (prevItem.id === item.id) {
-    //           return {
-    //             ...prevItem,
-    //             qtd: prevItem.qtd + 1
-    //           }
-    //         }
-    //         return prevItem
-    //       }))
-    //     }
-      
-    //     const newItem = {
-    //       id: item.id,
-    //       name: item.name,
-    //       price: item.price,
-    //       flavor: item.flavor,
-    //       complement: item.complement,
-    //       qtd: 1,
-    //     }
-    //     return setItemsList([...itemsList, newItem])
-    //   }
-
+    }      
+        
     return (
         <>
             <Header />
@@ -148,8 +101,10 @@ const Menu = ()  => {
                 {/* <MealNavBar /> */}
                 <div className="left-side">
                     <header className="select-menu-perMeal">
-                        <GeneralButton variant="third" onClick={() => handleClick('breakfast')}>Café da manhã</GeneralButton>
-                        <GeneralButton variant="third" onClick={() => handleClick('all-day')}>Almoço</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('breakfast')}>Café&Cia</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('hamburguer')}>Lanchos</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('drinks')}>Bebidas</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('side')}>Petiscos</GeneralButton>
                     </header>
                     <section className="products-list-perMeal" {...setSelectedProducts}>
 
@@ -176,9 +131,9 @@ const Menu = ()  => {
                             <h3 className="title-orders">Pedidos</h3>
                             <form className="form-inputs-order">
                                 <label>Mesa</label>
-                                <input className="input-order table" value={values.mesa} name="mesa" type="number" min="1" max="9" placeholder="0" onChange={handleChange}/> <br />
+                                <input className="input-order table" value={values.table} name="mesa" type="number" min="1" max="9" placeholder="0" onChange={handleChange}/> <br />
                                 <label>Cliente</label>
-                                <input className="input-order clientName" value={values.cliente} name="cliente" type="text" autoComplete="off" onChange={handleChange}/>
+                                <input className="input-order clientName" value={values.client} name="cliente" type="text" autoComplete="off" onChange={handleChange}/>
                             </form>
                         </article>
                         <article className="text-ordersList">
@@ -199,9 +154,9 @@ const Menu = ()  => {
                         </article>                        
                         <hr/>
                         <Total cartItems={itemsList} />
-                        <GeneralButton variant="fifth" className="btn-confirmOrder">
+                        {/* <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={SubmitToKitchenConfirm()}>
                             Confirmar pedido
-                        </GeneralButton>
+                        </GeneralButton> */}
                     </section>
                 </div>
                 <MenuOptionsNavBar /> 
@@ -211,3 +166,48 @@ const Menu = ()  => {
 };
 
 export default Menu;
+
+// Rafa's alternatives functions for addItem and removeItem:
+    // const removeItem = (item) => {
+    //     if (item.qtd > 1) {
+    //     return setItemsList((prevItems) => prevItems.map((prevItem) => {
+    //         if (prevItem.id === item.id) {
+    //         return {
+    //             ...prevItem,
+    //             qtd: prevItem.qtd - 1
+    //         }
+    //         }
+    //         return prevItem
+    //     }))
+    //     }
+    
+    //     return setItemsList((prevItems) => prevItems
+    //     .filter((prevItem) => prevItem.id !== item.id)
+    //     )
+    // }
+
+    // const addItem = (item) => {
+    //     const hasElement = itemsList.some(({ id }) => id === item.id);
+      
+    //     if (hasElement) {
+    //       return setItemsList((prevItems) => prevItems.map((prevItem) => {
+    //         if (prevItem.id === item.id) {
+    //           return {
+    //             ...prevItem,
+    //             qtd: prevItem.qtd + 1
+    //           }
+    //         }
+    //         return prevItem
+    //       }))
+    //     }
+      
+    //     const newItem = {
+    //       id: item.id,
+    //       name: item.name,
+    //       price: item.price,
+    //       flavor: item.flavor,
+    //       complement: item.complement,
+    //       qtd: 1,
+    //     }
+    //     return setItemsList([...itemsList, newItem])
+    //   }

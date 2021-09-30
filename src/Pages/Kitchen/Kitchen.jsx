@@ -5,11 +5,11 @@ import './style.scss'
 
 const Kitchen = () => {
     const token = getStorageKey();
-
     const [ordersList, setOrdersList] = useState([]);
 
     useEffect(() => {
         CreateOrder()
+            
             .then((data) => setOrdersList(data)) //aqui traz toda a lista dos pedidos enviada de volta para a API
             .catch((error) => console.log(error, 'Erro ao acessar a lista de produtos'))
     }, [token])
