@@ -22,7 +22,8 @@ export const modal = {
     const closeBtn = modalElement.querySelector('#close-btn');
     const noBtn = modalElement.querySelector('#no-btn');
 
-    confirmBtn.addEventListener('click', () => {
+    confirmBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       callback();
       modalBackground.style.display = 'none';
     });
@@ -43,7 +44,8 @@ export const modal = {
   },
 };
 
-export const SubmitToKitchenConfirm = () => {
+export const SubmitToKitchenConfirm = (e) => {
+  e.preventDefault();
   modal.confirm('Deseja enviar o pedido para a cozinha?', () => {
     console.log('envia o pedido para a cozinha');
   });

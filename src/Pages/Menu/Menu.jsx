@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { getStorageKey} from '../../services/storage'
-import { getProducts }from '../../services/data'
+import { getProducts } from '../../services/data'
 import { ItemCard, SelectedItem, Total } from '../../components/ItemsMenu/ItemsMenu'
-import Modal from '../../components/ItemsMenu/ModalCart'
-import {SubmitToKitchenConfirm} from '../../components/ItemsMenu/PopUpConfirm'
+// import {SubmitToKitchenConfirm} from '../../components/ItemsMenu/PopUpConfirm'
 import MenuOptionsNavBar from '../../components/Footer/NavBarOptions';
 import GeneralButton from '../../components/Button/Button';
 // import MealNavBar from '../../components/Header/MealNavBar'
@@ -11,21 +10,20 @@ import Header from '../../components/Header/Header';
 import './style.scss';
 
 const Menu = ()  => {
-    // const [orders, setOrders] = useState([]);
     const [products, setProducts] = useState([]);
+    // const [orders, setOrders] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
-    // const [burger, setBurger] = useState([])
     const [itemsList, setItemsList] = useState([]);
     const [values, setValues] = useState({
-        'mesa': '',
-        'cliente': '', 
+        'table': '',
+        'client': '', 
     })
 
     const token = getStorageKey();
 
     useEffect(() => {
         getProducts()
-        .then((res) => {                    
+        .then((res) => {
             setProducts(res)
             const breakfast = res.filter((item) => item.type === 'breakfast')
             setSelectedProducts(breakfast)
@@ -52,25 +50,6 @@ const Menu = ()  => {
             [name]: value, 
         })
         console.log(value);
-    }
-
-    const [dropdown, setDropdown] = useState("");
-    const modalRef = useRef(null)
-
-    const toggleDropdown = () => {
-        console.log("show");
-        setDropdown("show");
-        document.body.addEventListener("click", closeDropdown);
-    }
-
-    const closeDropdown = event => {
-        event.stopPropagation();
-        const contain = modalRef.current
-        if(!contain) {
-            console.log("hidden");
-            setDropdown("");
-            document.body.removeEventListener("click", closeDropdown)
-        }
     }
 
     const deleteItem = (id) => {
@@ -113,8 +92,8 @@ const Menu = ()  => {
             }
             setItemsList([...itemsList, newItem])
         }
-    }
-
+    }      
+        
     return (
         <>
             <Header />
@@ -122,10 +101,10 @@ const Menu = ()  => {
                 {/* <MealNavBar /> */}
                 <div className="left-side">
                     <header className="select-menu-perMeal">
-                        <GeneralButton variant="third" onClick={() => handleClick('breakfast')}>Café da manhã</GeneralButton>
-                        <GeneralButton variant="third" onClick={() => handleClick('hamburguer')}>Burguer</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('breakfast')}>Café&Cia</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('hamburguer')}>Lanchos</GeneralButton>
                         <GeneralButton variant="third" onClick={() => handleClick('drinks')}>Bebidas</GeneralButton>
-                        <GeneralButton variant="third" onClick={() => handleClick('side')}>Acompanhamento</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('side')}>Petiscos</GeneralButton>
                     </header>
                     <section className="products-list-perMeal" {...setSelectedProducts}>
 
@@ -147,18 +126,14 @@ const Menu = ()  => {
                     </section>
                 </div>
                 <div className="right-side cartList-display">
-                    <section className="ordersList-modal">
-                        <button onClick={toggleDropdown}>Carrinho</button>
-                        <Modal className={dropdown} modalRef={modalRef}/>
-                    </section>
                     <section className="section-ordersList">
                         <article className="text-orders">
                             <h3 className="title-orders">Pedidos</h3>
                             <form className="form-inputs-order">
                                 <label>Mesa</label>
-                                <input className="input-order table" value={values.mesa} name="mesa" type="number" min="1" max="9" placeholder="0" onChange={handleChange}/> <br />
+                                <input className="input-order table" value={values.table} name="mesa" type="number" min="1" max="9" placeholder="0" onChange={handleChange}/> <br />
                                 <label>Cliente</label>
-                                <input className="input-order clientName" value={values.cliente} name="cliente" type="text" autoComplete="off" onChange={handleChange}/>
+                                <input className="input-order clientName" value={values.client} name="cliente" type="text" autoComplete="off" onChange={handleChange}/>
                             </form>
                         </article>
                         <article className="text-ordersList">
@@ -179,9 +154,9 @@ const Menu = ()  => {
                         </article>                        
                         <hr/>
                         <Total cartItems={itemsList} />
-                        <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={SubmitToKitchenConfirm()}>
+                        {/* <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={SubmitToKitchenConfirm()}>
                             Confirmar pedido
-                        </GeneralButton>
+                        </GeneralButton> */}
                     </section>
                 </div>
                 <MenuOptionsNavBar /> 
