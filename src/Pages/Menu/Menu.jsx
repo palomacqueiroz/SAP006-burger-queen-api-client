@@ -16,7 +16,7 @@ const Menu = ()  => {
     // const [burger, setBurger] = useState([])
     const [itemsList, setItemsList] = useState([]);
 
-    const [addItem, setAddItem] = useState([]);
+    // const [addItem, setAddItem] = useState([]);
     // const [removeItem, setRemoveItem] = useState([]);
     const [values, setValues] = useState({
         'mesa': '',
@@ -31,19 +31,20 @@ const Menu = ()  => {
             setProducts(res)
             const breakfast = res.filter((item) => item.type === 'breakfast')
             setSelectedProducts(breakfast)
-            // const burger = res.filter((item) => item.sub_type === 'hamburguer')
-            // setBurger(burger);
-
+            const burger = res.filter((item) => item.sub_type === 'hamburguer')
+            setSelectedProducts(burger)                       
+            const drinks = res.filter(item => item.sub_type === 'drinks')
+            setSelectedProducts(drinks)
+            const side = res.filter(item => item.sub_type === 'side')
+            setSelectedProducts(side)
             return res;
         })
         .catch((error) => console.log(error, 'Erro ao acessar a lista de produtos'))
     }, [token])
 
-    const handleClick = (meal) => { 
-        const selectedMenu = products.filter((item) => item.type === meal)
-        setSelectedProducts(selectedMenu)  
-        // const compileBurger = products.filter((item) => item.sub_type === 'hamburguer')
-        // setBurger(compileBurger)     
+    const handleClick = (productsCategory) => { 
+        const selectedMenu = products.filter((item) => item.type === productsCategory || item.sub_type === productsCategory)
+        setSelectedProducts(selectedMenu)             
     }
 
     const handleChange = (event) => {
@@ -149,7 +150,9 @@ const Menu = ()  => {
                 <div className="left-side">
                     <header className="select-menu-perMeal">
                         <GeneralButton variant="third" onClick={() => handleClick('breakfast')}>Café da manhã</GeneralButton>
-                        <GeneralButton variant="third" onClick={() => handleClick('all-day')}>Almoço</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('hamburguer')}>Burguer</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('drinks')}>Bebidas</GeneralButton>
+                        <GeneralButton variant="third" onClick={() => handleClick('side')}>Acompanhamento</GeneralButton>
                     </header>
                     <section className="products-list-perMeal" {...setSelectedProducts}>
 

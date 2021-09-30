@@ -1,5 +1,5 @@
 export const paths = {
-    login: '/login',
+    login: '/',
     menu: '/menu',
     ordersStatus: '/orders-status',
     kitchen: '/kitchen',
