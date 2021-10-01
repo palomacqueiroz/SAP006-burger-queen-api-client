@@ -27,4 +27,19 @@ const Header = () => {
     )
 }
 
-export default Header;
+const HeaderKitchen = () => {
+    const history = useHistory();
+    const handleLogout = () => {
+        removeStorageKey();
+        history.push('./')  
+    }
+    
+    return (
+        <nav className="header-navbar-desktop">
+            <h2 className="header-title">VIXI!</h2>
+            <button className="header-button" onClick={handleLogout}><Icon icon="carbon:logout" color="black" /></button>
+        </nav>
+    )
+}
+
+export { Header, HeaderKitchen };

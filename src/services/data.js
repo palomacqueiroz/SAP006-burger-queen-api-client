@@ -1,5 +1,7 @@
 import { getStorageKey } from "./storage";
-import { useEffect } from "react";
+// import { useEffect } from "react";
+
+// token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxlbGVAbGVsZXQuY29tIiwiaWQiOjIyNjgsImlhdCI6MTYzMjE2NTkwMCwiZXhwIjoxNjYzNzIzNTAwfQ.QX2JUBulrIlNPIHpcBfbP3gGZ8D3Lj61JArdHBamocU
 
 export const getProducts = async () => {
   const token = getStorageKey();
@@ -15,33 +17,30 @@ export const getProducts = async () => {
     .catch((error) => console.log(error, "Erro ao acessar a API de produtos"));
 };
 
-export const CreateOrder = (order, item) => {
-//   const token = getStorageKey();
+export const createOrder = async (body) => {
+  const token = getStorageKey();
+  // const body = {
+  //   "client": orders.client,
+  //   "table": orders.table,
+  //   "products": [],
+  // }
 
-  useEffect(() => {
-    fetch("https://lab-api-bq.herokuapp.com/orders", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: getStorageKey(),
-      },
-      body: JSON.stringify({
-        client: order.client,
-        table: order.table,
-        products: [
-          {
-            id: item.id,
-            qtd: item.qtd,
-          },
-        ],
-      }),
+  return await fetch("https://lab-api-bq.herokuapp.com/orders", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+    body: JSON.stringify(body),
+  })
+    .then((response) => {
+      response.json();
+      console.log(response.json);
     })
-      .then((response) => {
-        response.json();
-        console.log(response.json);
-      })
-    //   .then((json) => setItemsList(json))
-      .catch((error) => console.log(error, "Erro ao criar o pedido"));
-      
-  });
+    // .then((res) => {
+    //   saveStorageKey(res.token);
+    //   console.log(res.token)
+    //   return res;
+    // })
+    .catch((error) => console.log(error, "Erro ao criar o pedido"));
 };

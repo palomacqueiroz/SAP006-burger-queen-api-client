@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { CreateOrder } from '../../services/data';
+import { HeaderKitchen } from '../../components/Header/Header';
+import { createOrder } from '../../services/data';
 import { getStorageKey } from '../../services/storage';
 import './style.scss'
 
@@ -8,14 +9,14 @@ const Kitchen = () => {
     const [ordersList, setOrdersList] = useState([]);
 
     useEffect(() => {
-        CreateOrder()
-            
+        createOrder()
             .then((data) => setOrdersList(data)) //aqui traz toda a lista dos pedidos enviada de volta para a API
             .catch((error) => console.log(error, 'Erro ao acessar a lista de produtos'))
     }, [token])
 
     return (
         <>
+            <HeaderKitchen />
             <div className='div-style'>
                 Kitchen <br />
                 {'<em construção>'}
