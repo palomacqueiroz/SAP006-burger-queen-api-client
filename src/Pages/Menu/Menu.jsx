@@ -51,7 +51,28 @@ const Menu = ()  => {
         })
         console.log(value);
     }
+    
+    const addItemOnCart = (item) => {
+        const countElement = itemsList.find(element => element.id === item.id)
 
+        if(countElement) {
+            countElement.qtd += 1
+            setItemsList(itemArray => itemArray.map(
+                itemProduct => itemProduct.id === countElement.id ? countElement : itemProduct)
+            )
+        } else {
+            const newItem = { 
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                flavor: item.flavor,
+                complement: item.complement,
+                qtd: 1,
+            }
+            setItemsList([...itemsList, newItem])
+        }
+    }   
+    
     const deleteItem = (id) => {
         const index = itemsList.findIndex((item) => item.id === id)
         const updatedItemsList = [...itemsList]
@@ -72,27 +93,6 @@ const Menu = ()  => {
            deleteItem(item.id)
         }
     }
-
-    const addItemOnCart = (item) => {
-        const countElement = itemsList.find(element => element.id === item.id)
-
-        if(countElement) {
-            countElement.qtd += 1
-            setItemsList(itemArray => itemArray.map(
-                itemProduct => itemProduct.id === countElement.id ? countElement : itemProduct)
-            )
-        } else {
-            const newItem = { 
-                id: item.id,
-                name: item.name,
-                price: item.price,
-                flavor: item.flavor,
-                complement: item.complement,
-                qtd: 1,
-            }
-            setItemsList([...itemsList, newItem])
-        }
-    }      
         
     return (
         <>
@@ -154,9 +154,9 @@ const Menu = ()  => {
                         </article>                        
                         <hr/>
                         <Total cartItems={itemsList} />
-                        {/* <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={SubmitToKitchenConfirm()}>
+                        { <GeneralButton variant="fifth" className="btn-confirmOrder" /*onClick={SubmitToKitchenConfirm()}*/>
                             Confirmar pedido
-                        </GeneralButton> */}
+                        </GeneralButton> }
                     </section>
                 </div>
                 <MenuOptionsNavBar /> 

@@ -1,5 +1,4 @@
 import { getStorageKey } from "./storage";
-import { useEffect } from "react";
 
 export const getProducts = async () => {
   const token = getStorageKey();
@@ -15,15 +14,14 @@ export const getProducts = async () => {
     .catch((error) => console.log(error, "Erro ao acessar a API de produtos"));
 };
 
-export const CreateOrder = (order, item) => {
-//   const token = getStorageKey();
-
-  useEffect(() => {
-    fetch("https://lab-api-bq.herokuapp.com/orders", {
+export const CreateOrder = async(order, item) => {
+  const token = getStorageKey();
+  
+    return await fetch("https://lab-api-bq.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: getStorageKey(),
+        Authorization: token,
       },
       body: JSON.stringify({
         client: order.client,
@@ -39,9 +37,8 @@ export const CreateOrder = (order, item) => {
       .then((response) => {
         response.json();
         console.log(response.json);
-      })
-    //   .then((json) => setItemsList(json))
+      })    
       .catch((error) => console.log(error, "Erro ao criar o pedido"));
       
-  });
-};
+  }
+
