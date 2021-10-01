@@ -17,15 +17,15 @@ export const getProducts = async () => {
     .catch((error) => console.log(error, "Erro ao acessar a API de produtos"));
 };
 
-export const createOrder = async (body) => {
+export const createOrder = async (orders) => {
   const token = getStorageKey();
-  // const body = {
-  //   "client": orders.client,
-  //   "table": orders.table,
-  //   "products": [],
-  // }
+  const body = {
+    "client": orders.client,
+    "table": orders.table,
+    "products": orders.products,
+  }
 
-  return await fetch("https://lab-api-bq.herokuapp.com/orders", {
+  await fetch("https://lab-api-bq.herokuapp.com/orders", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -33,14 +33,10 @@ export const createOrder = async (body) => {
     },
     body: JSON.stringify(body),
   })
-    .then((response) => {
-      response.json();
-      console.log(response.json);
-    })
-    // .then((res) => {
-    //   saveStorageKey(res.token);
-    //   console.log(res.token)
-    //   return res;
-    // })
+    .then((response) => response.json() && console.log('sucesso'))
     .catch((error) => console.log(error, "Erro ao criar o pedido"));
 };
+
+export const getOrder = () => {
+  
+}

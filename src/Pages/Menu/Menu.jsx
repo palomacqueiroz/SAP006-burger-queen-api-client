@@ -11,7 +11,6 @@ import './style.scss';
 
 const Menu = ()  => {
     const [products, setProducts] = useState([]);
-    // const [orders, setOrders] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
     const [itemsList, setItemsList] = useState([]);
     const [values, setValues] = useState({
@@ -27,10 +26,13 @@ const Menu = ()  => {
             setProducts(res)
             const breakfast = res.filter((item) => item.type === 'breakfast')
             setSelectedProducts(breakfast)
+
             const burger = res.filter((item) => item.sub_type === 'hamburguer')
-            setSelectedProducts(burger)                       
+            setSelectedProducts(burger)    
+
             const drinks = res.filter(item => item.sub_type === 'drinks')
             setSelectedProducts(drinks)
+
             const side = res.filter(item => item.sub_type === 'side')
             setSelectedProducts(side)
             return res;
@@ -94,28 +96,20 @@ const Menu = ()  => {
         }
     }      
 
-    const handleSubmit = (orders) => { 
-        // e.preventDefault();
-        const handleOrders = orders.map((item) => {
-            {
-                client: item.client,
-                // table: item.table,
-                products: [{
+    const handleSubmit = () => { 
+        const object = {
+            client: values.client,
+            table: values.table,
+            products: itemsList.map(item => {
+                const productsArray = {
                     id: item.id,
-                    qtd: item.qtd,
-                }]
-            }
-        })
-        createOrder(handleOrders)
+                    qtd: item.qtd
+                }
+                return productsArray
+            })
+        }
+        createOrder(object)
     }
-    // const HandleSubmit = (e) => {
-    //     e.preventDefault();
-     
-    //     return  console.log(CreateOrder());
-
-    //     // .then((ordersList) => setOrdersList[ordersList, order]) //aqui traz toda a lista dos pedidos enviada de volta para a API
-    //     // .catch((error) => console.log(error, 'Erro ao acessar a lista de produtos'))     
-    // }
         
     return (
         <>
@@ -177,7 +171,7 @@ const Menu = ()  => {
                         </article>                        
                         <hr/>
                         <Total cartItems={itemsList} />
-                        <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={() => handleSubmit(itemsList)}>
+                        <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={() => handleSubmit()}>
                             Confirmar pedido
                         </GeneralButton>
                     </section>

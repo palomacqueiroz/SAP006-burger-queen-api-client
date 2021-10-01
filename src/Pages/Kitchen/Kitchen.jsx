@@ -1,18 +1,14 @@
 import { useState, useEffect } from 'react';
 import { HeaderKitchen } from '../../components/Header/Header';
 import { createOrder } from '../../services/data';
-import { getStorageKey } from '../../services/storage';
 import './style.scss'
 
 const Kitchen = () => {
-    const token = getStorageKey();
     const [ordersList, setOrdersList] = useState([]);
 
-    useEffect(() => {
         createOrder()
-            .then((data) => setOrdersList(data)) //aqui traz toda a lista dos pedidos enviada de volta para a API
-            .catch((error) => console.log(error, 'Erro ao acessar a lista de produtos'))
-    }, [token])
+            .then((data) => setOrdersList(data)) 
+            .catch((error) => console.log(error, 'Erro ao acessar a lista de pedidos'))
 
     return (
         <>
