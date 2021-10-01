@@ -1,7 +1,7 @@
 import { getStorageKey } from "./storage";
 // import { useEffect } from "react";
 
-// token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxlbGVAbGVsZXQuY29tIiwiaWQiOjIyNjgsImlhdCI6MTYzMjE2NTkwMCwiZXhwIjoxNjYzNzIzNTAwfQ.QX2JUBulrIlNPIHpcBfbP3gGZ8D3Lj61JArdHBamocU
+// token menu: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxlbGVAbGVsZXQuY29tIiwiaWQiOjIyNjgsImlhdCI6MTYzMjE2NTkwMCwiZXhwIjoxNjYzNzIzNTAwfQ.QX2JUBulrIlNPIHpcBfbP3gGZ8D3Lj61JArdHBamocU
 
 export const getProducts = async () => {
   const token = getStorageKey();
@@ -38,5 +38,5 @@ export const createOrder = async (orders) => {
 };
 
 export const getOrder = () => {
-  
+
 }
