@@ -1,29 +1,47 @@
-import { useState, useEffect } from 'react';
-import { HeaderKitchen } from '../../components/Header/Header';
-import { createOrder } from '../../services/data';
-import './style.scss'
+import { useState, useEffect } from "react";
+import { HeaderKitchen } from "../../components/Header/Header";
+import { OrderCard } from "../../components/OrderCard/OrderCard";
+// import { getStorageKey} from '../../services/storage';
+import { getOrders } from "../../services/data";
+import "./style.scss";
 
 const Kitchen = () => {
-    const [ordersList, setOrdersList] = useState([]);
+  const [kitchen, setKitchen] = useState([]);
+  // const token = getStorageKey();
 
-        createOrder()
-            .then((data) => setOrdersList(data)) 
-            .catch((error) => console.log(error, 'Erro ao acessar a lista de pedidos'))
+  useEffect(() => {
+    getOrders().then((response) => setKitchen(response));
+    console.log("foi pro setKitchen");
+    console.log(setKitchen);
+    // .catch((error) => console.log(error, 'Erro ao acessar a lista de pedidos'))
+  }, []);
 
-    return (
-        <>
-            <HeaderKitchen />
-            <div className='div-style'>
-                Kitchen <br />
-                {'<em construção>'}
+  const orderDone = () => {
+    console.log("to pronto pro buxin");
+  };
 
-            <section className="list-all-orders" {...ordersList}>
-                Lista de pedidos
-            </section>
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <HeaderKitchen />
+      <h3>Lista de pedidos</h3>
+      <div>
+        {kitchen.map((item) => (
+          <div key={item.id}>
+            {" "}
+            <p>nome: {item.client_name} </p> <p>mesa {item.table} </p>{" "}
+            {item.Products.map((produto) => (
+              <>
+                {" "}
+                <p>produto: {produto.name}</p> <p>quantidade: {produto.qtd}</p>{" "}
+              </>
+            ))}{" "}
+          </div>
+        ))}
+      </div>
+      <nav>Filtro de status</nav>
+    </>
+  );
+};
 
 export default Kitchen;
 
