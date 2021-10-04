@@ -47,5 +47,22 @@ export const getOrders = async () => {
     },
   })
     .then((response) => response.json())
-    // .catch((error) => console.log(error, "Erro ao acessar os pedidos"));
+    .catch((error) => console.log(error, "Erro ao acessar os pedidos"));
 }
+
+export const updateOrder = async (status, id) => {
+  const token = getStorageKey();
+
+  return await fetch(`https://lab-api-bq.herokuapp.com/orders/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+    body: JSON.stringify({
+      status: status
+    })
+  })
+    .then((response) => response.json())
+    .catch((error) => console.log(error, "Erro ao atualizar os pedidos"));
+}  
