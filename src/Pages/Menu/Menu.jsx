@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import { getStorageKey} from '../../services/storage'
-import { getProducts } from '../../services/data'
+import { createOrder, getProducts } from '../../services/data'
 import { ItemCard, SelectedItem, Total } from '../../components/ItemsMenu/ItemsMenu'
 // import {SubmitToKitchenConfirm} from '../../components/ItemsMenu/PopUpConfirm'
 import MenuOptionsNavBar from '../../components/Footer/NavBarOptions';
 import GeneralButton from '../../components/Button/Button';
 // import MealNavBar from '../../components/Header/MealNavBar'
-import Header from '../../components/Header/Header';
+import { Header } from '../../components/Header/Header';
 import './style.scss';
 
 const Menu = ()  => {
     const [products, setProducts] = useState([]);
-    // const [orders, setOrders] = useState([]);
     const [selectedProducts, setSelectedProducts] = useState([]);
     const [itemsList, setItemsList] = useState([]);
     const [values, setValues] = useState({
@@ -27,10 +26,13 @@ const Menu = ()  => {
             setProducts(res)
             const breakfast = res.filter((item) => item.type === 'breakfast')
             setSelectedProducts(breakfast)
+
             const burger = res.filter((item) => item.sub_type === 'hamburguer')
-            setSelectedProducts(burger)                       
+            setSelectedProducts(burger)    
+
             const drinks = res.filter(item => item.sub_type === 'drinks')
             setSelectedProducts(drinks)
+
             const side = res.filter(item => item.sub_type === 'side')
             setSelectedProducts(side)
             return res;
@@ -93,6 +95,21 @@ const Menu = ()  => {
             setItemsList([...itemsList, newItem])
         }
     }      
+
+    const handleSubmit = () => { 
+        const object = {
+            client: values.client,
+            table: values.table,
+            products: itemsList.map(item => {
+                const productsArray = {
+                    id: item.id,
+                    qtd: item.qtd
+                }
+                return productsArray
+            })
+        }
+        createOrder(object)
+    }
         
     return (
         <>
@@ -131,9 +148,9 @@ const Menu = ()  => {
                             <h3 className="title-orders">Pedidos</h3>
                             <form className="form-inputs-order">
                                 <label>Mesa</label>
-                                <input className="input-order table" value={values.table} name="mesa" type="number" min="1" max="9" placeholder="0" onChange={handleChange}/> <br />
+                                <input className="input-order table" value={values.table} name="table" type="number" min="1" max="9" placeholder="0" onChange={handleChange}/> <br />
                                 <label>Cliente</label>
-                                <input className="input-order clientName" value={values.client} name="cliente" type="text" autoComplete="off" onChange={handleChange}/>
+                                <input className="input-order clientName" value={values.client} name="client" type="text" autoComplete="off" onChange={handleChange}/>
                             </form>
                         </article>
                         <article className="text-ordersList">
@@ -154,9 +171,9 @@ const Menu = ()  => {
                         </article>                        
                         <hr/>
                         <Total cartItems={itemsList} />
-                        {/* <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={SubmitToKitchenConfirm()}>
+                        <GeneralButton variant="fifth" className="btn-confirmOrder" onClick={() => handleSubmit()}>
                             Confirmar pedido
-                        </GeneralButton> */}
+                        </GeneralButton>
                     </section>
                 </div>
                 <MenuOptionsNavBar /> 
