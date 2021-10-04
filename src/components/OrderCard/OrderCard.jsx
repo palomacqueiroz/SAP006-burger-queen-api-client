@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react';
+// import { Icon } from '@iconify/react';
 
 export const OrderCardHeader = ({id, name, table}) => {
 
@@ -19,5 +19,5 @@ export const OrderCardHeader = ({id, name, table}) => {
 
 export const OrderCardContent = ({product, qtd, orderDone}) => {
 
-    
+
 }
