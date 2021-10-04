@@ -1,5 +1,4 @@
 import { getStorageKey } from "./storage";
-// import { useEffect } from "react";
 
 // token menu: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxlbGVAbGVsZXQuY29tIiwiaWQiOjIyNjgsImlhdCI6MTYzMjE2NTkwMCwiZXhwIjoxNjYzNzIzNTAwfQ.QX2JUBulrIlNPIHpcBfbP3gGZ8D3Lj61JArdHBamocU
 
@@ -37,6 +36,16 @@ export const createOrder = async (orders) => {
     .catch((error) => console.log(error, "Erro ao criar o pedido"));
 };
 
-export const getOrder = () => {
+export const getOrders = async () => {
+  const token = getStorageKey();
 
+  return await fetch("https://lab-api-bq.herokuapp.com/orders", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  })
+    .then((response) => response.json())
+    // .catch((error) => console.log(error, "Erro ao acessar os pedidos"));
 }
