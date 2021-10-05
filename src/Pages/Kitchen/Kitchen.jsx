@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { HeaderKitchen } from "../../components/Header/Header";
 import { OrderCardBase } from "../../components/OrderCard/OrderCardBase";
 import { OrderCardProducts } from "../../components/OrderCard/OrderCardProducts";
+// import { OrderCard } from "../../components/OrderCard/OrderCard";
+// import { getStorageKey} from '../../services/storage';
 import { getOrders, updateOrder } from "../../services/data";
 import "./style.scss";
 
 const Kitchen = () => {
   const [orderList, setOrderList] = useState([]);
-  const [statusOrder, setStatusOrder] = useState([]);
+  // const [statusOrder, setStatusOrder] = useState([]);
 
   useEffect(() => {
     getOrders()
@@ -31,13 +33,13 @@ const Kitchen = () => {
       );
   }, []);
 
-  // const handleClickStatus = (productsCategory) => {
-  //   const selectedMenu = orderList.filter(
-  //     (order) =>
-  //       order.status === productsCategory || order.status === productsCategory
-  //   );
-  //   setStatusOrder(selectedMenu);
-  // };
+  /* const handleClickStatus = (productsCategory) => {
+    const selectedMenu = orderList.filter(
+      (order) =>
+        order.status === productsCategory || order.status === productsCategory
+    );
+    setStatusOrder(selectedMenu);
+  }; */
 
   const updateStatusClick = (id) => {
     updateOrder("ready", id);
