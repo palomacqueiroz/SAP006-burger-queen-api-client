@@ -50,7 +50,7 @@ export const getOrders = async () => {
     .catch((error) => console.log(error, "Erro ao acessar os pedidos"));
 }
 
-export const updateOrder = async (status, id) => {
+export const updateOrder = async (index, id, status, orderList, setOrderList) => {
   const token = getStorageKey();
 
   return await fetch(`https://lab-api-bq.herokuapp.com/orders/${id}`, {
@@ -64,6 +64,11 @@ export const updateOrder = async (status, id) => {
     })
   })
     .then((response) => response.json())
+    .then(() => {
+      const pendingOrdersList = [...orderList];
+      pendingOrdersList[index].status = status;
+      setOrderList(pendingOrdersList);
+    })
     .catch((error) => console.log(error, "Erro ao atualizar os pedidos"));
 }
 
