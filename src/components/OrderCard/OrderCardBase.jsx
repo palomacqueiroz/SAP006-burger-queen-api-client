@@ -16,6 +16,7 @@ export const OrderCardBase = ({
   const getOrderCreatedAt = new Date(orderCreatedAt);
   const getOrderProcessedAt = new Date(getOrderCreatedAt);
   const getOrderResidual = Math.abs(getOrderProcessedAt) - getOrderCreatedAt;
+  console.log(getOrderResidual);
   const showOrderPrepTime = Math.floor(getOrderResidual / 1000 / 60);
   const timeToGetOrderDone =
     showOrderPrepTime === 60

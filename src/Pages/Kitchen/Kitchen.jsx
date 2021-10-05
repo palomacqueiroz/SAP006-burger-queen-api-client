@@ -9,12 +9,14 @@ import "./style.scss";
 
 const Kitchen = () => {
   const [orderList, setOrderList] = useState([]);
-  // const [statusOrder, setStatusOrder] = useState([]);
+  const [statusOrder, setStatusOrder] = useState([]);
 
   useEffect(() => {
     getOrders()
       .then((response) => {
-        setOrderList(response);
+        const sortById = response.sort((itemA, itemB) => itemA.id - itemB.id);
+        setOrderList(sortById);
+        console.log(sortById);
         // const pending = response.filter((order) => order.status === "pending");
         // setStatusOrder(pending);
 
@@ -73,7 +75,7 @@ const Kitchen = () => {
               tableNumber={order.table}
               orderStatus={order.status}
               orderProcessed={order.processedAt}
-              orderCreatedAt={order.createdAt}
+              orderCreatedAt={order.createdAt} 
               updatedAt={order.updatedAt}
               orderProducts={order.products}
               updateOrderToProcessing={() => updateStatusClick(index, order.id, 'processing', orderList, setOrderList)}
