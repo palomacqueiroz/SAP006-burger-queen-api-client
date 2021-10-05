@@ -1,4 +1,3 @@
-// import { Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getOrders } from "../../services/data";
 import { OrderCardBase } from "../../components/OrderCard/OrderCardBase";
@@ -6,8 +5,6 @@ import { OrderCardProducts } from "../../components/OrderCard/OrderCardProducts"
 import { Header } from '../../components/Header/Header';
 import GeneralButton from '../../components/Button/Button';
 
-
-// import Button from '../../components/Button';
 
 const OrderStatus = () => {
     const [orderList, setOrderList] = useState([]);
@@ -18,15 +15,12 @@ const OrderStatus = () => {
           .then((response) => {
             const sortById = response.sort((itemA, itemB) => itemA.id - itemB.id);
             setOrderList(sortById);
-            console.log(sortById);
+            const allOrders = response.filter((order) => order.status)
+            setStatusOrder(allOrders);
             const pending = response.filter((order) => order.status === "pending");
             setStatusOrder(pending);
-    
-            const preparing = response.filter(
-            (order) => order.status === "preparing"
-            );
-            setStatusOrder(preparing);
-    
+            const processing = response.filter((order) => order.status === "processing");
+            setStatusOrder(processing);
             const ready = response.filter((order) => order.status === "ready");
             setStatusOrder(ready);
     
@@ -49,17 +43,17 @@ const OrderStatus = () => {
             <Header />            
             <section>         
                 <header className="select-menu-perMeal">
+                    <GeneralButton variant="third" onClick={() => handleClickStatus('')}>Todos</GeneralButton>
                     <GeneralButton variant="third" onClick={() => handleClickStatus('pending')}>Pendente</GeneralButton>
-                    <GeneralButton variant="third" onClick={() => handleClickStatus('preparing')}>Preparando</GeneralButton>
+                    <GeneralButton variant="third" onClick={() => handleClickStatus('processing')}>Preparando</GeneralButton>
                     <GeneralButton variant="third" onClick={() => handleClickStatus('ready')}>Pronto</GeneralButton>
-                    <GeneralButton variant="third" onClick={() => handleClickStatus('side')}>Entregue</GeneralButton>
+                    <GeneralButton variant="third" onClick={() => handleClickStatus('')}>Entregue</GeneralButton>
                 </header>
             </section>
             <div>
                 <section className="allOrders-container">
                     {statusOrder.map((order, index) => (
-                        (order.status === 'pending' || order.status === 'processing')
-                        && <OrderCardBase 
+                        <OrderCardBase 
                         key={`order-${index}`}
                         orderId={order.id}
                         clientName={order.client_name}
