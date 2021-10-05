@@ -7,40 +7,20 @@ import "./style.scss";
 
 const Kitchen = () => {
   const [orderList, setOrderList] = useState([]);
-  // const [statusOrder, setStatusOrder] = useState([]);
 
   useEffect(() => {
     getOrders()
       .then((response) => {
         const sortById = response.sort((itemA, itemB) => itemB.id - itemA.id);
         setOrderList(sortById);
-        console.log(sortById);
-        // const pending = response.filter((order) => order.status === "pending");
-        // setStatusOrder(pending);
-
-        // const preparing = response.filter(
-        //   (order) => order.status === "preparing"
-        // );
-        // setStatusOrder(preparing);
-
-        // const ready = response.filter((order) => order.status === "ready");
-        // setStatusOrder(ready);
-
-        // return response;
+        console.log(sortById);        
       })
       .catch((error) =>
         console.log(error, "Erro ao acessar a lista de pedidos")
       );
   }, []);
 
-  /* const handleClickStatus = (productsCategory) => {
-    const selectedMenu = orderList.filter(
-      (order) =>
-        order.status === productsCategory || order.status === productsCategory
-    );
-    setStatusOrder(selectedMenu);
-  }; */
-
+ 
   return (
     <>
       <HeaderKitchen />
