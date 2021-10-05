@@ -1,4 +1,4 @@
-// import { Icon } from '@iconify/react';
+// import { TimeOrPrepareTime } from "../Time/PrepareTime";
 import { convertDate, convertTime } from "../../services/data";
 import "./style.scss";
 
@@ -15,8 +15,10 @@ export const OrderCardBase = ({
 }) => {
   const getOrderCreatedAt = new Date(orderCreatedAt);
   const getOrderProcessedAt = new Date(getOrderCreatedAt);
-  const getOrderResidual = Math.abs(getOrderProcessedAt) - getOrderCreatedAt;  
+  const getOrderResidual = getOrderProcessedAt.getTime() - getOrderCreatedAt.getTime();
+  console.log(getOrderResidual);
   const showOrderPrepTime = Math.floor(getOrderResidual / 1000 / 60);
+
   const timeToGetOrderDone =
     showOrderPrepTime === 60
       ? `${getOrderResidual + 1}: 00`
@@ -51,11 +53,13 @@ export const OrderCardBase = ({
         <p className="order-info id">
           #{orderId} • MESA {tableNumber} • {clientName}
         </p>
-        <p className="order-info table">
+        {/* <TimeOrPrepareTime /> */}
+        <p className="order-info dateAndTime">
+          {/* {timeToGetOrderDone}  */}
           {convertDate(orderCreatedAt)} às{" "}
           {convertTime(orderCreatedAt)}
         </p>
-        <p className="order-info table">
+        <p className="order-info timePrepare">
           Tempo de Preparo: {timeToGetOrderDone}
         </p>
       </article>

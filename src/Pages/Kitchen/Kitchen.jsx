@@ -2,19 +2,17 @@ import { useState, useEffect } from "react";
 import { HeaderKitchen } from "../../components/Header/Header";
 import { OrderCardBase } from "../../components/OrderCard/OrderCardBase";
 import { OrderCardProducts } from "../../components/OrderCard/OrderCardProducts";
-// import { OrderCard } from "../../components/OrderCard/OrderCard";
-// import { getStorageKey} from '../../services/storage';
 import { getOrders, updateOrder } from "../../services/data";
 import "./style.scss";
 
 const Kitchen = () => {
   const [orderList, setOrderList] = useState([]);
-  const [statusOrder, setStatusOrder] = useState([]);
+  // const [statusOrder, setStatusOrder] = useState([]);
 
   useEffect(() => {
     getOrders()
       .then((response) => {
-        const sortById = response.sort((itemA, itemB) => itemA.id - itemB.id);
+        const sortById = response.sort((itemA, itemB) => itemB.id - itemA.id);
         setOrderList(sortById);
         console.log(sortById);
         // const pending = response.filter((order) => order.status === "pending");
@@ -43,25 +41,6 @@ const Kitchen = () => {
     setStatusOrder(selectedMenu);
   }; */
 
-  const updateStatusClick = (id) => {
-    updateOrder("ready", id);
-    const orderStatusId = orderList.find((element) => element.id === id);
-
-    if (orderStatusId) {
-      setStatusOrder(orderStatusId)    
-    } else {
-      const newStatus = {
-        id: id,
-        status: statusOrder,
-      };
-      setOrderList([...orderList, newStatus]);
-    }
-  };
-
-  // const orderDone = () => {
-  //   console.log("to pronto pro buxin");
-  // };
-
   return (
     <>
       <HeaderKitchen />
@@ -78,8 +57,8 @@ const Kitchen = () => {
               orderCreatedAt={order.createdAt} 
               updatedAt={order.updatedAt}
               orderProducts={order.products}
-              updateOrderToProcessing={() => updateStatusClick(index, order.id, 'processing', orderList, setOrderList)}
-              updateOrderToReady={() => updateStatusClick(index, order.id, 'ready', orderList, setOrderList)}
+              updateOrderToProcessing={() => updateOrder(index, order.id, 'processing', orderList, setOrderList)}
+              updateOrderToReady={() => updateOrder(index, order.id, 'ready', orderList, setOrderList)}
             >
 
               {order.Products.map((product, productIndex) => (
@@ -92,29 +71,6 @@ const Kitchen = () => {
                 />
               ))}
             </OrderCardBase>
-
-
-            // <article key={item.id} className="order-header">
-            //   {" "}
-            //   <p>#{item.id} • MESA {item.table} • {item.client_name}</p>
-            //   <p>Cliente:  </p>
-            //   <p>Mesa  </p>{" "}
-            // </article>
-
-            // <article className="order-content" >
-              // {item.Products.map((produto) => (
-              //   <>
-              //     {" "}
-              //     <p className="info-order">x {produto.qtd}</p>{" "}
-              //     <p className="info-order">{produto.name}</p>
-              //     <p className="info-order">Sabor: {produto.flavor}</p>
-              //     <p className="info-order">Adicional: {produto.complement}</p>
-              //   </>
-              // ))}{" "}
-            // </article>
-            // <button onClick={() => updateStatusClick(item.id)}>
-            //   Marcar como pronto
-            // </button>
         ))}
       </section>
       {/* <nav>Filtro de status
@@ -125,6 +81,3 @@ const Kitchen = () => {
 };
 
 export default Kitchen;
-
-//para armazenar utiliza-se a API: quando for enviar, faz um POST/orders, faz o fetch, montar o objeto de acordo como está na API
-//no botao de fazer o pedido, junta (join?) o objeto

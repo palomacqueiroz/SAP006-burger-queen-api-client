@@ -11,12 +11,13 @@
 .order-card-status {
     background-color: #FFDCA8;
     border-radius: 1.2rem 1.2rem 0 0;
+    line-height: 0.5px;
+    font-size: 0.8rem;
+    height: 5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
-    line-height: 0.5px;
-    font-size: 1rem;
 }
 
 .order-card-products, .order-card-buttons {
