@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import { getStorageKey} from '../../services/storage'
 import { createOrder, getProducts } from '../../services/data'
 import { ItemCard, SelectedItem, Total } from '../../components/ItemsMenu/ItemsMenu'
@@ -96,6 +97,8 @@ const Menu = ()  => {
         }
     }      
 
+    const history = useHistory();
+
     const handleSubmit = () => { 
         const object = {
             client: values.client,
@@ -103,12 +106,15 @@ const Menu = ()  => {
             products: itemsList.map(item => {
                 const productsArray = {
                     id: item.id,
+                    flavor: item.flavor, 
+                    complement: item.complement,
                     qtd: item.qtd
                 }
                 return productsArray
             })
         }
         createOrder(object)
+        history.push('/orders-status');
     }
         
     return (
