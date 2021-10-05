@@ -57,7 +57,7 @@ const OrderStatus = () => {
             </section>
             <div>
                 <section className="allOrders-container">
-                    {orderList.map((order, index) => (
+                    {statusOrder.map((order, index) => (
                         (order.status === 'pending' || order.status === 'processing')
                         && <OrderCardBase 
                         key={`order-${index}`}
