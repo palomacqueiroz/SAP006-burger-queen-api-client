@@ -32,7 +32,7 @@ export const createOrder = async (orders) => {
     },
     body: JSON.stringify(body),
   })
-    .then((response) => response.json() && console.log('sucesso'))
+    .then((response) => response.json())
     .catch((error) => console.log(error, "Erro ao criar o pedido"));
 };
 
