@@ -37,6 +37,7 @@ const HeaderKitchen = () => {
     return (
         <nav className="header-navbar-desktop">
             <h2 className="header-title">VIXI!</h2>
+            <h2 className="header-title-kitchen">Cozinha • Pedidos</h2>
             <button className="header-button" onClick={handleLogout}><Icon icon="carbon:logout" color="black" /></button>
         </nav>
     )

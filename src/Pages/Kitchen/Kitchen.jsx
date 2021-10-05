@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { HeaderKitchen } from "../../components/Header/Header";
-import { OrderCard } from "../../components/OrderCard/OrderCard";
-// import { getStorageKey} from '../../services/storage';
+import { OrderCardBase } from "../../components/OrderCard/OrderCardBase";
+import { OrderCardProducts } from "../../components/OrderCard/OrderCardProducts";
 import { getOrders, updateOrder } from "../../services/data";
 import "./style.scss";
 
@@ -31,50 +31,91 @@ const Kitchen = () => {
       );
   }, []);
 
-  const handleClickStatus = (productsCategory) => {
-    const selectedMenu = orderList.filter(
-      (order) =>
-        order.status === productsCategory || order.status === productsCategory
-    );
-    setStatusOrder(selectedMenu);
-  };
+  // const handleClickStatus = (productsCategory) => {
+  //   const selectedMenu = orderList.filter(
+  //     (order) =>
+  //       order.status === productsCategory || order.status === productsCategory
+  //   );
+  //   setStatusOrder(selectedMenu);
+  // };
 
   const updateStatusClick = (id) => {
-    updateOrder("ready", id)
-    console.log(updateOrder());
-  }
+    updateOrder("ready", id);
+    const orderStatusId = orderList.find((element) => element.id === id);
 
-  const orderDone = () => {
-    console.log("to pronto pro buxin");
+    if (orderStatusId) {
+      setStatusOrder(orderStatusId)    
+    } else {
+      const newStatus = {
+        id: id,
+        status: statusOrder,
+      };
+      setOrderList([...orderList, newStatus]);
+    }
   };
+
+  // const orderDone = () => {
+  //   console.log("to pronto pro buxin");
+  // };
 
   return (
     <>
       <HeaderKitchen />
-      <h3>Lista de pedidos</h3>
-      <div>
-        {orderList.map((item) => (
-          <>
-            <article key={item.id}>
-              {" "}
-              <p>nome: {item.client_name} </p>
-              <p>mesa {item.table} </p>{" "}
-            </article>
+      <section className="allOrders-container">
+          {orderList.map((order, index) => (
+            (order.status === 'pending' || order.status === 'processing')
+            && <OrderCardBase 
+              key={`order-${index}`}
+              orderId={order.id}
+              clientName={order.client_name}
+              tableNumber={order.table}
+              orderStatus={order.status}
+              orderProcessed={order.processedAt}
+              orderCreatedAt={order.createdAt}
+              updatedAt={order.updatedAt}
+              orderProducts={order.products}
+              updateOrderToProcessing={() => updateStatusClick(index, order.id, 'processing', orderList, setOrderList)}
+              updateOrderToReady={() => updateStatusClick(index, order.id, 'ready', orderList, setOrderList)}
+            >
 
-            <article>
-              {item.Products.map((produto) => (
-                <>
-                  {" "}
-                  <p>produto: {produto.name}</p>
-                  <p>quantidade: {produto.qtd}</p>{" "}
-                </>
-              ))}{" "}
-            </article>
-            <button onClick={() => updateStatusClick(item.id)}>Marcar como pronto</button>
-          </>
+              {order.Products.map((product, productIndex) => (
+                <OrderCardProducts
+                  key={`${order.id}-item-${productIndex}`}
+                  qtd={product.qtd}
+                  name={product.name}
+                  flavor={product.flavor}
+                  complement={product.complement}
+                />
+              ))}
+            </OrderCardBase>
+
+
+            // <article key={item.id} className="order-header">
+            //   {" "}
+            //   <p>#{item.id} • MESA {item.table} • {item.client_name}</p>
+            //   <p>Cliente:  </p>
+            //   <p>Mesa  </p>{" "}
+            // </article>
+
+            // <article className="order-content" >
+              // {item.Products.map((produto) => (
+              //   <>
+              //     {" "}
+              //     <p className="info-order">x {produto.qtd}</p>{" "}
+              //     <p className="info-order">{produto.name}</p>
+              //     <p className="info-order">Sabor: {produto.flavor}</p>
+              //     <p className="info-order">Adicional: {produto.complement}</p>
+              //   </>
+              // ))}{" "}
+            // </article>
+            // <button onClick={() => updateStatusClick(item.id)}>
+            //   Marcar como pronto
+            // </button>
         ))}
-      </div>
-      <nav>Filtro de status</nav>
+      </section>
+      {/* <nav>Filtro de status
+        <p></p>
+      </nav> */}
     </>
   );
 };
