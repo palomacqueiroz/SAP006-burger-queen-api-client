@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { HeaderKitchen } from "../../components/Header/Header";
 import { OrderCardBase } from "../../components/OrderCard/OrderCardBase";
 import { OrderCardProducts } from "../../components/OrderCard/OrderCardProducts";
+// import { OrderCard } from "../../components/OrderCard/OrderCard";
+// import { getStorageKey} from '../../services/storage';
 import { getOrders, updateOrder } from "../../services/data";
 import "./style.scss";
 
@@ -12,7 +14,9 @@ const Kitchen = () => {
   useEffect(() => {
     getOrders()
       .then((response) => {
-        setOrderList(response);
+        const sortById = response.sort((itemA, itemB) => itemA.id - itemB.id);
+        setOrderList(sortById);
+        console.log(sortById);
         // const pending = response.filter((order) => order.status === "pending");
         // setStatusOrder(pending);
 
@@ -31,13 +35,13 @@ const Kitchen = () => {
       );
   }, []);
 
-  // const handleClickStatus = (productsCategory) => {
-  //   const selectedMenu = orderList.filter(
-  //     (order) =>
-  //       order.status === productsCategory || order.status === productsCategory
-  //   );
-  //   setStatusOrder(selectedMenu);
-  // };
+  /* const handleClickStatus = (productsCategory) => {
+    const selectedMenu = orderList.filter(
+      (order) =>
+        order.status === productsCategory || order.status === productsCategory
+    );
+    setStatusOrder(selectedMenu);
+  }; */
 
   // const updateStatusClick = (id) => {
   //   updateOrder("ready", id);
@@ -71,7 +75,7 @@ const Kitchen = () => {
               tableNumber={order.table}
               orderStatus={order.status}
               orderProcessed={order.processedAt}
-              orderCreatedAt={order.createdAt}
+              orderCreatedAt={order.createdAt} 
               updatedAt={order.updatedAt}
               orderProducts={order.products}
               updateOrderToProcessing={() => updateOrder(index, order.id, 'processing', orderList, setOrderList)}
