@@ -7,67 +7,71 @@ import GeneralButton from '../../components/Button/Button';
 
 const OrderStatus = () => {
     const [orderList, setOrderList] = useState([]);
-    const [statusOrder, setStatusOrder] = useState([]);
+    const [statusOrder, setStatusOrder] = useState({});
+    const [order, setOrder] = useState([]);
 
     useEffect(() => {
         getOrders()
           .then((response) => {
             const sortById = response.sort((itemA, itemB) => itemB.id - itemA.id);
             setOrderList(sortById);
-            console.log(response)
-            const allOrders = response.filter((order) => order.status === "pending" && "processing" && "ready" && "delivered")
-            setStatusOrder(allOrders);
+            // console.log(response)
+            setStatusOrder(e => ({...e, all:response}));
+
             const pending = response.filter((order) => order.status === "pending");
-            setStatusOrder(pending);
+            setStatusOrder(e => ({...e, pending}));
+
             const processing = response.filter((order) => order.status === "processing");
-            setStatusOrder(processing);
+            setStatusOrder(e => ({...e, processing}));
+
             const ready = response.filter((order) => order.status === "ready");
-            setStatusOrder(ready);
+            setStatusOrder(e => ({...e, ready}));
+
             const delivered = response.filter((order) => order.status === "delivered");
-            setStatusOrder(delivered);
+            setStatusOrder(e => ({...e, delivered}));
     
-            return response;
           })
           .catch((error) =>
             console.log(error, "Erro ao acessar a lista de pedidos")
           );
-      }, []);
+      }, []); //eslint-disable-line
+
 
     const handleClickStatus = (selectStatusOrder) => {
-        const selectedStatus = orderList.filter((order) => order.status === selectStatusOrder);
-        setStatusOrder(selectedStatus);
+        setOrder(statusOrder[selectStatusOrder]);
+        console.log(statusOrder);
     };
 
     return (
         <>
             <Header />            
-            <section>         
+            <nav>         
                 <header className="select-menu-perMeal">
-                    <GeneralButton variant="third" onClick={() => handleClickStatus('')}>Todos</GeneralButton>
+                    <GeneralButton variant="third" onClick={() => handleClickStatus('all')}>Todos</GeneralButton>
                     <GeneralButton variant="third" onClick={() => handleClickStatus('pending')}>Pendente</GeneralButton>
                     <GeneralButton variant="third" onClick={() => handleClickStatus('processing')}>Preparando</GeneralButton>
                     <GeneralButton variant="third" onClick={() => handleClickStatus('ready')}>Pronto</GeneralButton>
                     <GeneralButton variant="third" onClick={() => handleClickStatus('delivered')}>Entregue</GeneralButton>
                 </header>
-            </section>
+            </nav>
             <div>
                 <section className="allOrders-container">
-                    {statusOrder.map((order, index) => (
+                    {order.map((item, index) => (
                         <OrderCardBase 
                         key={`order-${index}`}
-                        orderId={order.id}
-                        clientName={order.client_name}
-                        tableNumber={order.table}
-                        orderStatus={order.status}
-                        orderProcessed={order.processedAt}
-                        orderCreatedAt={order.createdAt} 
-                        updatedAt={order.updatedAt}
-                        orderProducts={order.products}                        
+                        orderId={item.id}
+                        clientName={item.client_name}
+                        tableNumber={item.table}
+                        orderStatus={item.status}
+                        orderProcessed={item.processedAt}
+                        orderCreatedAt={item.createdAt} 
+                        updatedAt={item.updatedAt}
+                        orderProducts={item.products}                        
                         >
 
-                        {order.Products.map((product, productIndex) => (
+                        {item.Products.map((product, productIndex) => (
                             <OrderCardProducts
-                            key={`${order.id}-item-${productIndex}`}
+                            key={`${item.id}-item-${productIndex}`}
                             qtd={product.qtd}
                             name={product.name}
                             flavor={product.flavor}
