@@ -1,4 +1,4 @@
-// import { TimeOrPrepareTime } from "../Time/PrepareTime";
+import { TimeOrPrepareTime } from "../Time/TimeOrPrepareTime";
 import { convertDate, convertTime } from "../../services/data";
 import "./style.scss";
 
@@ -7,25 +7,14 @@ export const OrderCardBase = ({
   tableNumber,
   clientName,
   orderStatus,
-  orderCreatedAt,
+  createdAt,
+  updatedAt,
+  processedAt,
   children,
   updateOrderToProcessing,
   updateOrderToReady,
   updateOrderToDone,
 }) => {
-  const getOrderCreatedAt = new Date(orderCreatedAt);
-  const getOrderProcessedAt = new Date(getOrderCreatedAt);
-  const getOrderResidual = Math.abs(getOrderProcessedAt - getOrderCreatedAt);
-  console.log(getOrderResidual, '123');
-  const showOrderPrepTime = Math.floor(getOrderResidual / 1000 / 60);
-
-  const timeToGetOrderDone =
-    showOrderPrepTime === 60
-      ? `${getOrderResidual + 1}: 00`
-      : `${getOrderResidual}:${
-          showOrderPrepTime < 10 ? "0" : `${showOrderPrepTime}`
-        }`;
-  console.log("Tempo para preparar =", showOrderPrepTime);
 
   return (
     <section className="order-card">
@@ -53,14 +42,17 @@ export const OrderCardBase = ({
         <p className="order-info id">
           #{orderId} • MESA {tableNumber} • {clientName}
         </p>
-        {/* <TimeOrPrepareTime /> */}
+        <TimeOrPrepareTime 
+          createdAt={createdAt}
+          processedAt={processedAt}
+          updatedAt={updatedAt}
+        />
         <p className="order-info dateAndTime">
           {/* {timeToGetOrderDone}  */}
-          {convertDate(orderCreatedAt)} às{" "}
-          {convertTime(orderCreatedAt)}
+          {/* Entrada:   {`${changeTimeDefault.toLocaleDateString()} - ${changeTimeDefault.toLocaleTimeString()}`} */}
         </p>
         <p className="order-info timePrepare">
-          Tempo de Preparo: {timeToGetOrderDone}
+          {/* Tempo de Preparo: {preparingTime} minutos */}
         </p>
       </article>
 

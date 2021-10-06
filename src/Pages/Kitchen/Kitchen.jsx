@@ -32,8 +32,8 @@ const Kitchen = () => {
               clientName={order.client_name}
               tableNumber={order.table}
               orderStatus={order.status}
-              orderProcessed={order.processedAt}
-              orderCreatedAt={order.createdAt} 
+              processedAt={order.processedAt}
+              createdAt={order.createdAt} 
               updatedAt={order.updatedAt}
               orderProducts={order.products}
               updateOrderToProcessing={() => updateOrder(index, order.id, 'processing', orderList, setOrderList)}
