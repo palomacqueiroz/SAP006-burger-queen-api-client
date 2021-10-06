@@ -5,7 +5,6 @@ import { OrderCardProducts } from "../../components/OrderCard/OrderCardProducts"
 import { Header } from '../../components/Header/Header';
 import GeneralButton from '../../components/Button/Button';
 
-
 const OrderStatus = () => {
     const [orderList, setOrderList] = useState([]);
     const [statusOrder, setStatusOrder] = useState([]);
@@ -13,9 +12,10 @@ const OrderStatus = () => {
     useEffect(() => {
         getOrders()
           .then((response) => {
-            const sortById = response.sort((itemA, itemB) => itemA.id - itemB.id);
+            const sortById = response.sort((itemA, itemB) => itemB.id - itemA.id);
             setOrderList(sortById);
-            const allOrders = response.filter((order) => order.status)
+            console.log(response)
+            const allOrders = response.filter((order) => order.status === "pending" && "processing" && "ready" && "delivered")
             setStatusOrder(allOrders);
             const pending = response.filter((order) => order.status === "pending");
             setStatusOrder(pending);
@@ -23,6 +23,8 @@ const OrderStatus = () => {
             setStatusOrder(processing);
             const ready = response.filter((order) => order.status === "ready");
             setStatusOrder(ready);
+            const delivered = response.filter((order) => order.status === "delivered");
+            setStatusOrder(delivered);
     
             return response;
           })
@@ -32,11 +34,9 @@ const OrderStatus = () => {
       }, []);
 
     const handleClickStatus = (selectStatusOrder) => {
-        const selectedStatus = orderList.filter((order) =>
-        order.status === selectStatusOrder);
+        const selectedStatus = orderList.filter((order) => order.status === selectStatusOrder);
         setStatusOrder(selectedStatus);
     };
-    console.log(handleClickStatus);
 
     return (
         <>
@@ -47,7 +47,7 @@ const OrderStatus = () => {
                     <GeneralButton variant="third" onClick={() => handleClickStatus('pending')}>Pendente</GeneralButton>
                     <GeneralButton variant="third" onClick={() => handleClickStatus('processing')}>Preparando</GeneralButton>
                     <GeneralButton variant="third" onClick={() => handleClickStatus('ready')}>Pronto</GeneralButton>
-                    <GeneralButton variant="third" onClick={() => handleClickStatus('')}>Entregue</GeneralButton>
+                    <GeneralButton variant="third" onClick={() => handleClickStatus('delivered')}>Entregue</GeneralButton>
                 </header>
             </section>
             <div>
