@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getOrders } from "../../services/data";
+import { getOrders, updateOrder } from "../../services/data";
 import { OrderCardBase } from "../../components/OrderCard/OrderCardBase";
 import { OrderCardProducts } from "../../components/OrderCard/OrderCardProducts";
 import { Header } from '../../components/Header/Header';
@@ -7,7 +7,7 @@ import GeneralButton from '../../components/Button/Button';
 
 const OrderStatus = () => {
     const [order, setOrder] = useState([]);
-    const [statusOrder, setStatusOrder] = useState({});    
+    const [statusOrder, setStatusOrder] = useState({});
 
     useEffect(() => {
         getOrders()
@@ -32,8 +32,8 @@ const OrderStatus = () => {
           .catch((error) =>
             console.log(error, "Erro ao acessar a lista de pedidos")
           );
-    }, []); //eslint-disable-line
 
+    }, []);
 
     const handleClickStatus = (selectStatusOrder) => {
         setOrder(statusOrder[selectStatusOrder]);
@@ -60,10 +60,12 @@ const OrderStatus = () => {
                         clientName={item.client_name}
                         tableNumber={item.table}
                         orderStatus={item.status}
-                        orderProcessed={item.processedAt}
-                        orderCreatedAt={item.createdAt} 
+                        processedAt={item.processedAt}
+                        createdAt={item.createdAt} 
                         updatedAt={item.updatedAt}
-                        orderProducts={item.products}                        
+                        orderProducts={item.products}                    
+                        updateOrderToClient={() => 
+                            updateOrder(index, item.id, 'delivered', order, setOrder)}                        
                         >
 
                         {item.Products.map((product, productIndex) => (

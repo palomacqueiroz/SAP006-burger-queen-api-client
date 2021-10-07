@@ -1,5 +1,5 @@
 import { TimeOrPrepareTime } from "../Time/TimeOrPrepareTime";
-import { convertDate, convertTime } from "../../services/data";
+// import { convertDate, convertTime } from "../../services/data";
 import "./style.scss";
 
 export const OrderCardBase = ({
@@ -13,30 +13,30 @@ export const OrderCardBase = ({
   children,
   updateOrderToProcessing,
   updateOrderToReady,
-  updateOrderToDone,
+  updateOrderToClient,
 }) => {
 
   return (
     <section className="order-card">
       <article className="order-card-status">
         {orderStatus === "pending" && (
-          <div className="order-status weight-500 bg-color-pending color-lightest">
+          <div className="order-status bg-color-pending color-lightest">
             Pendente
           </div>
         )}
         {orderStatus === "processing" && (
-          <div className="order-status weight-500 bg-color-yellow color-brown">
+          <div className="order-status bg-color-yellow color-brown">
             Em andamento
           </div>
         )}
         {orderStatus === "ready" && (
-          <div className="order-status weight-500 bg-color-green color-lightest">
+          <div className="order-status bg-color-green color-lightest">
             Pronto para servir
           </div>
         )}
-        {orderStatus === "done" && (
-          <div className="order-status weight-500 bg-color-done color-lightest">
-            Servido
+        {orderStatus === "delivered" && (
+          <div className="order-status bg-color-toclient color-lightest">
+            Entregue
           </div>
         )}
         <p className="order-info id">
@@ -47,13 +47,6 @@ export const OrderCardBase = ({
           processedAt={processedAt}
           updatedAt={updatedAt}
         />
-        <p className="order-info dateAndTime">
-          {/* {timeToGetOrderDone}  */}
-          {/* Entrada:   {`${changeTimeDefault.toLocaleDateString()} - ${changeTimeDefault.toLocaleTimeString()}`} */}
-        </p>
-        <p className="order-info timePrepare">
-          {/* Tempo de Preparo: {preparingTime} minutos */}
-        </p>
       </article>
 
       <section className="order-card-products">{children}</section>
@@ -65,13 +58,11 @@ export const OrderCardBase = ({
         {orderStatus === "processing" && (
           <button onClick={updateOrderToReady}>Pronto</button>
         )}
-        {orderStatus === "ready" && (
+        {/* {orderStatus === "ready" && (
           <button onClick={updateOrderToDone}>Servido</button>
-        )}
-        {orderStatus === "done" && (
-          <p className="order-done-msg color-done">
-            Pedido finalizado
-          </p>
+        )} */}
+        {orderStatus === "ready" && (
+          <button onClick={updateOrderToClient}>Entregue</button>
         )}
       </section>
     </section>

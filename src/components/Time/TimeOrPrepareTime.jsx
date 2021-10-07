@@ -4,22 +4,20 @@ export const TimeOrPrepareTime = ({ createdAt, processedAt, updatedAt  }) => {
   console.log(processedAt, 'processedAt')  
   console.log(createdAt, "createdAt")  
   console.log(updatedAt, "updatedAt")  
-  // if (processedAt) {
-  //   return (
-  //     <>
-  //       <label className='orderLabel'>Tempo de preparo:</label>{' '}
-  //       <p> {getInterval(processedAt, createdAt)} </p>
-  //     </>
-  //   );
-  // }
-  const cronometro = () => {
-    {getInterval(processedAt, createdAt)}
+  if (processedAt) {
+    return (
+      <>
+        <p className='orderLabel'>Pedido feito em: {getTime(createdAt)}</p>{' '}
+        <label className='orderLabel'>Tempo de preparo:</label>{' '}
+        <p> {getInterval(createdAt, processedAt)} </p>
+      </>
+    );
   }
 
   return (
     <>
-      <p className='orderLabel'>Pedido feito às: {getTime(createdAt)}</p>{' '}
-      <p>Tempo de preparo: {cronometro()}</p>
+      <p className='orderLabel'>Pedido feito em: {getTime(createdAt)}</p>{' '}
+      {console.log(createdAt)}
     </>
   );
 };
