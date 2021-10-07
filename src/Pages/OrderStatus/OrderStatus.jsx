@@ -15,7 +15,6 @@ const OrderStatus = () => {
           .then((response) => {
             const sortById = response.sort((itemA, itemB) => itemB.id - itemA.id);
             setOrderList(sortById);
-            // console.log(response)
             setStatusOrder(e => ({...e, all:response}));
 
             const pending = response.filter((order) => order.status === "pending");
