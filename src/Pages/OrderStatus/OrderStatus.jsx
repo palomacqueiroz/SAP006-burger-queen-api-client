@@ -6,16 +6,15 @@ import { Header } from '../../components/Header/Header';
 import GeneralButton from '../../components/Button/Button';
 
 const OrderStatus = () => {
-    const [orderList, setOrderList] = useState([]);
-    const [statusOrder, setStatusOrder] = useState({});
     const [order, setOrder] = useState([]);
+    const [statusOrder, setStatusOrder] = useState({});    
 
     useEffect(() => {
         getOrders()
           .then((response) => {
             const sortById = response.sort((itemA, itemB) => itemB.id - itemA.id);
-            setOrderList(sortById);
-            // console.log(response)
+            setOrder(sortById);
+
             setStatusOrder(e => ({...e, all:response}));
 
             const pending = response.filter((order) => order.status === "pending");
@@ -28,18 +27,16 @@ const OrderStatus = () => {
             setStatusOrder(e => ({...e, ready}));
 
             const delivered = response.filter((order) => order.status === "delivered");
-            setStatusOrder(e => ({...e, delivered}));
-    
+            setStatusOrder(e => ({...e, delivered}));    
           })
           .catch((error) =>
             console.log(error, "Erro ao acessar a lista de pedidos")
           );
-      }, []); //eslint-disable-line
+    }, []); //eslint-disable-line
 
 
     const handleClickStatus = (selectStatusOrder) => {
         setOrder(statusOrder[selectStatusOrder]);
-        console.log(statusOrder);
     };
 
     return (
