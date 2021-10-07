@@ -36,8 +36,10 @@ const Kitchen = () => {
               createdAt={order.createdAt} 
               updatedAt={order.updatedAt}
               orderProducts={order.products}
-              updateOrderToProcessing={() => updateOrder(index, order.id, 'processing', orderList, setOrderList)}
-              updateOrderToReady={() => updateOrder(index, order.id, 'ready', orderList, setOrderList)}
+              updateOrderToProcessing={() => 
+                updateOrder(index, order.id, 'processing', orderList, setOrderList)}
+              updateOrderToReady={() => 
+                updateOrder(index, order.id, 'ready', orderList, setOrderList)}
             >
 
               {order.Products.map((product, productIndex) => (
