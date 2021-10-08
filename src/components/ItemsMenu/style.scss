@@ -7,8 +7,7 @@ $font600: 600;
 // CartList.jsx
 .section-ordersList {
     border-radius: 6.47px;
-    // border: solid #ebebeb 2px;
-    background-color: $white;
+    background: #e9d4ac69;
     height: 50vh;
     width: 35vh;
     margin: 4vh;
@@ -23,8 +22,7 @@ $font600: 600;
     }
 
     @media screen and (min-width: 801px){
-        // background: rgba(81, 104, 238, 0.07);
-        background: #e9d4ac69;
+        // background: #e9d4ac69;
         border-radius: 42px 0px 0px 42px;
         width: auto;
         height: 81vh;

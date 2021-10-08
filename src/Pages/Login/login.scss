@@ -11,17 +11,35 @@ $font-family: 'Montserrat', sans-serif;
 }
 
 .mainBoxLogin {
-    background: #F2F0D8;
+    // background: #F2F0D8;
+    background-image: url(../../Assets/paper.jpg);
+    background-repeat: repeat;
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .imgLogo {
     height: 30vh;
     width: 60vw;
     margin: 0vh 4vh;
+}
+
+.loginBox {
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleAndForm {
+    display: flex;
 }
 
 .title {
@@ -31,7 +49,7 @@ $font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 1000;
     text-transform: uppercase;
-    color: $blue-color;
+    // color: $blue-color;
     margin: 4vh 0 5vh;
 }
 
@@ -61,17 +79,15 @@ $font-family: 'Montserrat', sans-serif;
 @media screen and (min-width: 768px) {
     .mainBoxLogin {
         display: flex;
-        margin: 10rem 0 0 0;
     }
 
     .loginBox { 
         @include align;
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         width: 40vw;
-        height: 65vh;
-        background-color: $bg-white;
-        border: 1px solid $blue-color;
         border-radius: 20px;   
         margin: -20px;        
     }
@@ -85,8 +101,8 @@ $font-family: 'Montserrat', sans-serif;
 
 @media screen and (min-width: 1180px){
     .imgLogo {
-        width: 50vw;
-        height: 65vh;
+        width: 39vw;
+        height: 60vh;
     }
     
 }
