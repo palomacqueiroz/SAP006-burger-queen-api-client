@@ -1,4 +1,5 @@
-$bg-color:rgba(244, 244, 244, 0.52);
+// $bg-color:rgba(244, 244, 244, 0.52);
+$bg-color:#e9d4ac;
 $bg-white: rgb(255,255,255);
 $blue-color: #008F83;
 $text-color: rgb(0 , 0 , 0);
@@ -9,15 +10,17 @@ $font-family: 'Montserrat', sans-serif;
     justify-content:center;
 }
 
-.mainBox {
-    background: $bg-color;
+.mainBoxLogin {
+    background: #F2F0D8;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .imgLogo {
-    height: 38vh;
-    width: 80vw;
+    height: 30vh;
+    width: 60vw;
     margin: 0vh 4vh;
 }
 
@@ -56,7 +59,7 @@ $font-family: 'Montserrat', sans-serif;
 }
 
 @media screen and (min-width: 768px) {
-    .mainBox {
+    .mainBoxLogin {
         display: flex;
         margin: 10rem 0 0 0;
     }

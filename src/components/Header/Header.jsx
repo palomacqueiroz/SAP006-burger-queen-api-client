@@ -1,6 +1,8 @@
 import { useHistory, Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import { removeStorageKey } from '../../services/storage';
+import vixiCangaço from '../../Assets/burger.png';
+import vixiKitchen from '../../Assets/logodesktop.png';
 // import { getRouteHeaderMenu } from '../../routes/redirections';
 import './style.scss'
 
@@ -19,9 +21,10 @@ const Header = () => {
 
     return (
         <nav className="header-navbar-desktop">
-            <h2 className="header-title">VIXI!</h2>
-            <Link to='/menu' className="header-button">cardápio</Link>
-            <Link to='/orders-status' className="header-button">status dos pedidos</Link>
+            <img className="logo" src={vixiCangaço} alt='icon-vixi' />
+            {/* <h2 className="header-title">VIXI!</h2> */}
+            <Link to='/menu' className="header-button">CARDÁPIO</Link>
+            <Link to='/orders-status' className="header-button">STATUS DOS PEDIDOS</Link>
             <button className="header-button" onClick={handleLogout}><Icon icon="carbon:logout" color="black" /></button>
         </nav>
     )
@@ -36,7 +39,8 @@ const HeaderKitchen = () => {
     
     return (
         <nav className="header-navbar-desktop">
-            <h2 className="header-title">VIXI!</h2>
+            <img className="logoKitcken" src={vixiKitchen} alt='icon-vixi' />
+            {/* <h2 className="header-title">VIXI!</h2> */}
             <h2 className="header-title-kitchen">Cozinha • Pedidos</h2>
             <button className="header-button" onClick={handleLogout}><Icon icon="carbon:logout" color="black" /></button>
         </nav>

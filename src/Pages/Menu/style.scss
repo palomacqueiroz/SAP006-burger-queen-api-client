@@ -1,6 +1,7 @@
 .main {
     display: flex;
     flex-direction: row;
+    
 }
 
 .left-side {
@@ -48,6 +49,11 @@
     flex-direction: row;
     align-items: center;
     font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.title-orders {
+    font-size: 1.4rem;
 }
 
 .text-orders {
@@ -66,14 +72,15 @@
     border-radius: 4px;
     padding: 6px;
     margin: 4%;
-    font-size: 1.1rem;
     text-align: center;
 }
 
 .input-order.table {
     width: 20%;
+    font-size: 1.3rem;
 }
 
 .input-order.clientName {
     width: 60%;
+    font-size: 1.3rem;
 }

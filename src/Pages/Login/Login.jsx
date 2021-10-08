@@ -8,7 +8,7 @@ import GeneralButton from '../../components/Button/Button';
 import { Input } from '../../components/Input/Input';
 
 import './login.scss'
-import vixiLogo from '../../Assets/vixiLogo.png';
+import vixiCangaço from '../../Assets/logodesktop.png';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -35,8 +35,8 @@ const Login = () => {
     }
     
     return (
-            <section className="mainBox">
-                <img className="imgLogo" src={vixiLogo} alt='icon-login' />
+            <section className="mainBoxLogin">
+                <img className="imgLogo" src={vixiCangaço} alt='icon-login' />
                 <div className="loginBox">
                     <p className="title">login</p>
                     <form className="form" onSubmit={handleSubmit}>

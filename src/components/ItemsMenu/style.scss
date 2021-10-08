@@ -7,7 +7,7 @@ $font600: 600;
 // CartList.jsx
 .section-ordersList {
     border-radius: 6.47px;
-    border: solid #ebebeb 2px;
+    // border: solid #ebebeb 2px;
     background-color: $white;
     height: 50vh;
     width: 35vh;
@@ -23,7 +23,8 @@ $font600: 600;
     }
 
     @media screen and (min-width: 801px){
-        background: rgba(81, 104, 238, 0.07);
+        // background: rgba(81, 104, 238, 0.07);
+        background: #e9d4ac69;
         border-radius: 42px 0px 0px 42px;
         width: auto;
         height: 81vh;
@@ -55,7 +56,7 @@ $font600: 600;
     border-radius: 6.42px;
     font-family: Montserrat;
     font-weight: $font600;
-    font-size: 0.5rem;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,16 +79,30 @@ $font600: 600;
 .product-info.name {
     margin: 1.5vh 0vh;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 2.5em;
     font-family: 'Montserrat', sans-serif;
-    color: $nameItemColor;
+    // color: $nameItemColor;
+    color: #37211d;
+}
+
+.burger-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.product-info.flavor, .product-info.complement {
+    font-size: 2em;
+    color: #8C2A14;
+
 }
 
 .price {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #44433E;
     text-align: center;
 }
@@ -116,11 +131,12 @@ $font600: 600;
 }
 
 .btn-addItem {
-    background: $btnColor;
+    // background: $btnColor;
+    background: #D9B26A;
     border-radius: 19.9951px 6.42064px 6.42064px 6.42064px;
     font-family: $fontFamily;
     font-weight: $font600;
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 32px;
     text-align: center;
     align-items: center;
