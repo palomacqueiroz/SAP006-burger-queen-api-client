@@ -13,7 +13,6 @@ const Kitchen = () => {
       .then((response) => {
         const sortById = response.sort((itemA, itemB) => itemB.id - itemA.id);
         setOrderList(sortById);
-        console.log(sortById);
       })
       .catch((error) =>
         console.log(error, "Erro ao acessar a lista de pedidos")

@@ -61,7 +61,6 @@ const Menu = () => {
       ...values,
       [name]: value,
     });
-    console.log(value);
   };
 
   const deleteItem = (id) => {
