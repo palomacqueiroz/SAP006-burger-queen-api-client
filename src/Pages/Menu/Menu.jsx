@@ -48,10 +48,8 @@ const Menu = () => {
   }, [token]);
 
   const handleClick = (productsCategory) => {
-    const selectedMenu = products.filter(
-      (item) =>
-        item.type === productsCategory || item.sub_type === productsCategory
-    );
+    const selectedMenu = products.filter((item) => 
+    item.type === productsCategory || item.sub_type === productsCategory);
     setSelectedProducts(selectedMenu);
   };
 

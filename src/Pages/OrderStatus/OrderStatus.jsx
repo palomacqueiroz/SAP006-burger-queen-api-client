@@ -14,6 +14,7 @@ const OrderStatus = () => {
           .then((response) => {
             const sortById = response.sort((itemA, itemB) => itemB.id - itemA.id);
             setOrder(sortById);
+
             setStatusOrder(e => ({...e, all:response}));
 
             const pending = response.filter((order) => order.status === "pending");
@@ -26,13 +27,13 @@ const OrderStatus = () => {
             setStatusOrder(e => ({...e, ready}));
 
             const delivered = response.filter((order) => order.status === "delivered");
-            setStatusOrder(e => ({...e, delivered}));
-    
+            setStatusOrder(e => ({...e, delivered}));    
           })
           .catch((error) =>
             console.log(error, "Erro ao acessar a lista de pedidos")
           );
-      }, []); 
+
+    }, []);
 
     const handleClickStatus = (selectStatusOrder) => {
         setOrder(statusOrder[selectStatusOrder]);
