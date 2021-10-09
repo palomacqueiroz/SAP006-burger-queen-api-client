@@ -27,7 +27,6 @@ const Tables = ({data, setData}) => {
             ...values,
             [event.target.name]: event.target.value, 
         })
-        console.log(event.target.value);
     }
   
     const handleClick = (event) => {
@@ -35,14 +34,7 @@ const Tables = ({data, setData}) => {
             ...values,
             [event.target.name]: event.target.value, 
         })
-        console.log(event.target.parentNode.value);
     }
-
-    // const getNumberOfTable = e => {
-    //     const table = e.target.attributes.getNamedItem("numberTable").value;
-    //     console.log();
-    //     console.log(table);
-    // }
 
     return (
         <main> 

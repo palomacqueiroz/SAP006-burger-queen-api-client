@@ -7,7 +7,9 @@ import { getRouteByRole } from '../../routes/redirections';
 
 import GeneralButton from '../../components/Button/Button';
 import { Input }  from '../../components/Input/Input.jsx';
-import register from '../../Assets/register.png';
+// import register from '../../Assets/register.png';
+import vixiLogo from '../../Assets/vixi-no-bg.png';
+import vixiDesktop from '../../Assets/logodesktop.png';
 import './register.scss';
 
 const Register = () => {
@@ -52,7 +54,8 @@ const Register = () => {
     
     return (
         <section className="mainBox">
-            <img className="image" src={register} alt='icon-register' />
+            <img className="image" src={vixiLogo} alt='icon-register' />
+            <img className="imageDesktop" src={vixiDesktop} alt='icon-register' />
             <div className="signUpBox">
                 <p className="titleRegister">Crie sua conta</p>
                 <form className="form">
@@ -118,7 +121,7 @@ const Register = () => {
                         </label>
                         {errors.role && <p className='error errorsMessage'>{errors.role}</p>}
                     </form>
-                <GeneralButton className={register} variant="secondary" onClick={handleFormSubmit}>
+                <GeneralButton  variant="secondary" onClick={handleFormSubmit}>
                     Entrar
                 </GeneralButton>
                 <p className="phraseRegister">Já possui uma conta?<br/> 

@@ -10,7 +10,7 @@ $font-1em: 1em;
     height: 42px;
     font-size: 1.3em;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Finger Paint', cursive;
     text-align: center;    
     text-transform: uppercase;
     justify-content: center;
@@ -33,10 +33,12 @@ $font-1em: 1em;
 
 .button.primary{
     @include buttonProps;
-    background-color: $btn-blue;
-    width: 70%;
-    font-size: $font-1em;
+    background-color: rgb(167, 108, 99);
+    width: 29%;
+    height: 6vh;
+    font-size: 1.7rem;
     margin: 4rem 4rem 3rem;
+    padding: 0.3rem;
 }
 
 .button.secondary{
@@ -49,7 +51,8 @@ $font-1em: 1em;
 
 .button.third {
     @include buttonProps;
-    color: #008F83;
+    // color: #008F83;
+    color: rgb(55,33,29);
     width: max-content;
     text-align: center;
     align-items: center;
@@ -62,7 +65,7 @@ $font-1em: 1em;
 }
 
 .button.third:active {
-    background-color: #008F83;
+    background-color: #8C2A14;
     color: $btn-white;
 }
 
@@ -83,7 +86,8 @@ $font-1em: 1em;
 
 .button.fifth {
     @include buttonProps;
-    background-color: #008F83;
+    // background-color: #008F83;
+    background-color: #8C2A14;
     color: white;
     width: max-content;
     text-align: center;

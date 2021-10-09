@@ -6,9 +6,9 @@ export const ItemCard = ({id, name, price, img, flavor, complement, addItemOnCar
         <article className="item-card" key={id}>
             <img src={img} alt="Imagem do produto" className="img-product-info"></img>
             <p className="product-info name">{name}</p>
-            <section>
-                <p value="sabor">{flavor}</p>
-                <p name="complemento" >{`${complement !== null ? complement : ''}`}</p>
+            <section className="burger-info">
+                <p className="product-info flavor" value="sabor">{flavor}</p>
+                <p className="product-info complement" name="complemento" >{`${complement !== null ? complement : ''}`}</p>
             </section>
             <div className="footer-card">
                 <p className="product-info price">R$ {price}</p>

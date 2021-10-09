@@ -18,10 +18,6 @@ export const createUser = async (user) => {
         body: JSON.stringify(body)
     })
         .then(res => res.json())
-        //    console.log('response', response.token);
-            // saveStorageKey();
-            // console.log(token);
-            // return loginWithEmail({ email: user.email, password: user.password })
         .catch((error) => console.log(error, 'erro na createUser'))
     };
     
@@ -39,7 +35,6 @@ export const loginWithEmail = async (user) => {
         .then((response) => response.json())
         .then((res) => {
             saveStorageKey(res.token);
-            console.log(res.token)
             return res;
         })
         .catch((error) => console.log(error, 'erro de token na LoginWithEmail'))
