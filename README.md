@@ -74,6 +74,36 @@ A paleta de cores foi escolhida com tons que remetem ao sertão nordestino brasi
 
 - Instalamos o ESLint na aplicação para manter o código padronizado e pronto para ser testado.
 
+:writing_hand: **História de usuário #1**
+
+  <div align="center">
+    <img alt='História de Usuário 1' src="app/src/images/readme/hu1.png">
+    </img>
+  </div>
+
+:writing_hand: **História de usuário #2**
+
+  <div align="center">
+    <img alt='História de Usuário 2' src="app/src/images/readme/hu2.png">
+    </img>
+  </div>
+
+:writing_hand: **História de usuário #3**
+
+  <div align="center">
+    <img alt='História de Usuário 3' src="app/src/images/readme/hu3.png">
+    </img>
+  </div>
+
+:writing_hand: **História de usuário #4**
+
+  <div align="center">
+    <img alt='História de Usuário 4' src="app/src/images/readme/hu4.png">
+    </img>
+  </div>
+  
+  <div id='funcionalidades'>
+
 
 #### [Historia de usuario 1] Garçom/Garçonete deve poder entrar no sistema, caso o admin já lhe tenha dado as credenciais
 
