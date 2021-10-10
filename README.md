@@ -77,7 +77,7 @@ A paleta de cores foi escolhida com tons que remetem ao sertão nordestino brasi
 :writing_hand: **História de usuário #1**
 
   <div align="center">
-    <img alt='História de Usuário 1' src="app/src/images/readme/hu1.png">
+    <img alt='História de Usuário 1' src="src/Assets/garcom.png">
     </img>
   </div>
 
@@ -102,7 +102,15 @@ A paleta de cores foi escolhida com tons que remetem ao sertão nordestino brasi
     </img>
   </div>
   
-  <div id='funcionalidades'>
+ 
+Com base nas histórias dos usuários, definimos algumas funcionalidades para a aplicação:
+
+|              HU #1 :heavy_check_mark:              	|           HU #2 :heavy_check_mark:          	|           HU #3 :heavy_check_mark:           	|          HU #4 :heavy_check_mark:          	|
+|:--------------------------------------------------:	|:-------------------------------------------:	|:--------------------------------------------:	|:------------------------------------------:	|
+|                 Criar login e senha                	|       Anotar nome do cliente e a mesa       	|            Ver os pedidos em ordem           	| Ver a lista de pedidos prontos para servir 	|
+| Registar usuário conforme setor (cozinha ou salão) 	| Adicionar e/ou excluir produtos aos pedidos 	| Marcar pedido como 'PRONTO' para ser servido 	|    Marque os pedidos que foram entregues   	|
+|            Fazer login na tela correta             	|     Ver resumo e o valor total do pedido    	| Ver o tempo que levou para preparar o pedido 	|                                            	|
+|                                                    	|        Enviar o pedido para a cozinha       	|                                              	|                                            	|
 
 
 #### [Historia de usuario 1] Garçom/Garçonete deve poder entrar no sistema, caso o admin já lhe tenha dado as credenciais
