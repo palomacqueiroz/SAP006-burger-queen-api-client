@@ -48,7 +48,7 @@ Dessa forma, definimos:
 De acordo com as informações passadas pelo cliente, desenvolvemos o protótipo de baixa fidelidade, primeiramente
 para mobile.
 
-![protótipo] (https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/main/baixaFidelidade.png)
+![protótipo](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/main/baixaFidelidade.png)
 
 Fizemos ajustes no protótipo, pois identificamos, atraves de pesquisa com usuários, que algumas alterações seriam
 benéficas e trariam mais agilidade a aplicação e tornaria a ferramenta mais fácil para os funcionários.
