@@ -9,7 +9,9 @@
 - [5. Logotipo](#5-logotipo)
 - [6. Desenvolvimento](#6-desenvolvimento)
 - [7. UI e UX](#7-ui-e-ux)
-- [8. Objetivos de aprendizagem](#7-objetivos-de-aprendizagem)
+- [8. Objetivos de aprendizagem](#8-objetivos-de-aprendizagem)
+- [9. Tecnologias utilizadas](#9-tecnologias-utilizadas)
+- [9. Desenvolvedoras](#9-desenvolvedoras)
 
 ---
 
@@ -54,7 +56,11 @@ Fizemos ajustes no protótipo, pois identificamos, atraves de pesquisa com usuá
 benéficas e trariam mais agilidade a aplicação e tornaria a ferramenta mais fácil para os funcionários.
 Abaixo o protótipo de alta fidelidade, disponivel para mobile, tablete e desktop.
 
-![protótipo] ()
+![tablete]()
+
+![mobile]()
+
+![desktop]()
 
 ## 4. Paleta de Cores
 
@@ -119,7 +125,7 @@ Com base nas histórias dos usuários, organizamos o passo a passo do que deveri
 
 ## 7.UI e UX
 
-# Principais objetivos de UI: 
+## Principais objetivos de UI: 
 
 - Leitura clara de todos os textos
 
@@ -133,14 +139,15 @@ Com base nas histórias dos usuários, organizamos o passo a passo do que deveri
 
 - Liberdade e controle do usuário
 
-# Principal objetivos de UX: 
+## Principal objetivos de UX: 
 
 - Ouvir os usuários e compreender como está a sua experiência com a aplicação.
 
 Fizemos uma pesquisa com os usuários para sabermos sua opinião sobre a usabilidade, layout e funcionalidades
 da aplicação e identificar as possíveis melhorias que poderíamos fazer.
 
-# Feedback e Sugestões de Melhorias
+### Feedback e Sugestões de Melhorias
+
 
 ## 8.Objetivos de aprendizagem
 
@@ -192,4 +199,26 @@ da aplicação e identificar as possíveis melhorias que poderíamos fazer.
 - [ ] **Criar protótipos para obter feedback e iterar**
 - [ ] **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
 - [ ] **Planejar e executar testes de usabilidade**
+
+
+## 9.Tecnologias utilizadas
+
+<div style="display: inline_block"><br>
+  <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+  <img align="center" alt="JS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">  
+  <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="SCSS" height="30" width="40" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+</div>
+
+## 10.Desenvolvedoras
+
+Abaixo link de nosso repositório e linkedin.
+
+<div align='center'>
+
+|                              Letícia Aniceto                             	      |                                 Paloma Queiroz                                	|
+|:------------------------------------------------------------------------------: |:------------------------------------------------------------------------------:	|
+|<img alt="Leticia" src="src/Assents/leticiaDev.png" height='200px'></img> | <img alt="Paloma" src="src/Assents/palomaDev.png" height='200px'></img> 	|
+| <a href='https://github.com/leticia-aniceto'><img alt='GitHub - Leticia' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/leticia-braga-aniceto/'><img alt='LinkedIn - Leticia' src='app/src/images/readme/linkedin_badge.png'></img></a>  |  <a href='https://github.com/palomacqueiroz'><img alt='GitHub - Paloma' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/palomac-queiroz/'><img alt='LinkedIn - Paloma' src='app/src/images/readme/linkedin_badge.png'></img></a> 	|          	|
+</div>
 
