@@ -152,53 +152,53 @@ da aplicação e identificar as possíveis melhorias que poderíamos fazer.
 ## 8.Objetivos de aprendizagem
 
 ### HTML e CSS
-- [ ] **Uso de HTML semântico**
-- [ ] **Uso de seletores de CSS**
-- [ ] **Empregar o modelo de caixa (box model): borda, margem, preenchimento**
-- [ ] **Uso de flexbox en CSS**
-- [ ] **Uso de media queries**
+- [x] **Uso de HTML semântico**
+- [x] **Uso de seletores de CSS**
+- [x] **Empregar o modelo de caixa (box model): borda, margem, preenchimento**
+- [x] **Uso de flexbox en CSS**
+- [x] **Uso de media queries**
 
 ### JavaScript
-- [ ] **Testes unitários**
+- [x] **Testes unitários**
 - [ ] **Testes assíncronos**
 - [ ] **Mocking**
-- [ ] **Uso ES modules**
-- [ ] **Uso de linter (ESLINT)**
-- [ ] **Uso de identificadores descritivos (Nomenclatura | Semântica)**
+- [x] **Uso ES modules**
+- [x] **Uso de linter (ESLINT)**
+- [x] **Uso de identificadores descritivos (Nomenclatura | Semântica)**
 
 ### Git e GitHub
-- [ ] **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
-- [ ] **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
-- [ ] **GitHub: Criação de contas e repositórios, configuração de chave SSH**
-- [ ] **GitHub: Implantação com GitHub Pages**
-- [ ] **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
-- [ ] **GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)**
+- [x] **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
+- [x] **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
+- [x] **GitHub: Criação de contas e repositórios, configuração de chave SSH**
+- [x] **GitHub: Implantação com GitHub Pages**
+- [x] **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
+- [x] **GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)**
 
 ### HTTP
-- [ ] **Solicitações o requisições (request) e respostas (response).**
-- [ ] **Cabeçalhos (headers)**
-- [ ] **Corpo (body)**
-- [ ] **Verbos HTTP**
-- [ ] **Codigos de status de HTTP**
-- [ ] **Encodings e JSON**
-- [ ] **CORS (Cross-Origin Resource Sharing)**
+- [x] **Solicitações o requisições (request) e respostas (response).**
+- [x] **Cabeçalhos (headers)**
+- [x] **Corpo (body)**
+- [x] **Verbos HTTP**
+- [x] **Codigos de status de HTTP**
+- [x] **Encodings e JSON**
+- [x] **CORS (Cross-Origin Resource Sharing)**
 
 ### react
-- [ ] **jsx**
-- [ ] **components**
-- [ ] **events**
-- [ ] **lists-and-keys**
-- [ ] **conditional-rendering**
-- [ ] **lifting-up-state**
-- [ ] **hooks**
-- [ ] **css-modules**
-- [ ] **routing**
+- [x] **jsx**
+- [x] **components**
+- [x] **events**
+- [x] **lists-and-keys**
+- [x] **conditional-rendering**
+- [x] **lifting-up-state**
+- [x] **hooks**
+- [x] **css-modules**
+- [x] **routing**
 
 ### UX (User eXperience)
-- [ ] **Desenhar a aplicação pensando e entendendo o usuário**
-- [ ] **Criar protótipos para obter feedback e iterar**
-- [ ] **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
-- [ ] **Planejar e executar testes de usabilidade**
+- [x] **Desenhar a aplicação pensando e entendendo o usuário**
+- [x] **Criar protótipos para obter feedback e iterar**
+- [x] **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
+- [x] **Planejar e executar testes de usabilidade**
 
 
 ## 9.Tecnologias utilizadas
