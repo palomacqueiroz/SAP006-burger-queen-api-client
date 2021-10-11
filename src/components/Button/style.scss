@@ -134,6 +134,11 @@ $font-1em: 1em;
     width: max-content;
 }
 
+.button.tenth {
+    border-radius: none;
+    
+}
+
 @media screen and (min-width: 768px){
     .button.secondary{ 
         margin: 2rem;
