@@ -1,7 +1,6 @@
 // $bg-color:rgba(244, 244, 244, 0.52);
 $bg-color:#e9d4ac;
 $bg-white: rgb(255,255,255);
-$blue-color: #008F83;
 $text-color: rgb(0 , 0 , 0);
 $font-family: 'Montserrat', sans-serif;
 
@@ -36,10 +35,13 @@ $font-family: 'Montserrat', sans-serif;
 .login-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .titleAndForm {
     display: flex;
+    width: 100%;
 }
 
 .title {
@@ -49,12 +51,12 @@ $font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 1000;
     text-transform: uppercase;
-    // color: $blue-color;
     margin: 4vh 0 5vh;
 }
 
 .form {
     @include align;
+    width: 100%;
 }
 
 .buttonLogin {
@@ -79,6 +81,8 @@ $font-family: 'Montserrat', sans-serif;
 @media screen and (min-width: 768px) {
     .mainBoxLogin {
         display: flex;
+        align-items: center;
+        padding-bottom: 5.5vh;
     }
 
     .loginBox { 
@@ -102,7 +106,7 @@ $font-family: 'Montserrat', sans-serif;
 @media screen and (min-width: 1180px){
     .imgLogo {
         width: 39vw;
-        height: 60vh;
+        height: 56vh;
     }
     
 }

@@ -142,6 +142,9 @@ $font-1em: 1em;
 @media screen and (min-width: 1180px){
     .button.button.secondary{
         width: 50%;
-        margin: 2rem 0 0 6rem;
+        width: 50%;
+        font-size: 1.1rem;
+        padding: 1vh;
+        background-color: rgb(167, 108, 99);
     }
  }

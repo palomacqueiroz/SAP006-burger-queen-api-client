@@ -2,8 +2,10 @@ import { differenceInMinutes, format } from 'date-fns';
 
 export const getTime = (dateString) => {
     const date = new Date(dateString);
+    console.log(date)
     const dateFormatted = format(date, "dd/MM/yyyy HH:mm");
-  
+    console.log(dateFormatted)
+
     return dateFormatted;
   
 }
