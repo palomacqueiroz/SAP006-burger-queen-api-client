@@ -64,7 +64,9 @@ A paleta de cores foi escolhida com tons que remetem ao sertão nordestino brasi
 
 ## 5.Logotipo
 
-![logotipo](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/main/src/Assets/vixiLogoBone.png)
+As imagens no logo foram escolhidas para homenagiar o sertão nordestino brasileiro.
+
+![logotipo](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/vixiLogo.png)
 
 ## 6.Desenvolvimento
 
