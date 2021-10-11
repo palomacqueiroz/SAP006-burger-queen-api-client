@@ -122,6 +122,21 @@ Com base nas histórias dos usuários, organizamos o passo a passo do que deveri
 |            Fazer login na tela correta             	|     Ver resumo e o valor total do pedido    	| Ver o tempo que levou para preparar o pedido 	|                                            	|
 |                                                    	|        Enviar o pedido para a cozinha       	|                                              	|                                            	|
 
+## Aplicação
+
+Resultado da aplicação após finalizarmos as 4 histórias de usuários.
+
+![login]()
+
+![cadastro]()
+
+![menu]()
+
+![kitchen]()
+
+![status]()
+
+![notFound]()
 
 ## 7.UI e UX
 
@@ -147,7 +162,6 @@ Fizemos uma pesquisa com os usuários para sabermos sua opinião sobre a usabili
 da aplicação e identificar as possíveis melhorias que poderíamos fazer.
 
 ### Feedback e Sugestões de Melhorias
-
 
 ## 8.Objetivos de aprendizagem
 
