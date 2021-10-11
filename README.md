@@ -41,14 +41,14 @@ Dessa forma, definimos:
 
 - FDP (Fatiar, Descartar e Priorizar)
 
-![planejamento](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/main/src/Assets/planejamento.png)
+![planejamento](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/planejamento.png)
 
 ## 3. Protótipo
 
 De acordo com as informações passadas pelo cliente, desenvolvemos o protótipo de baixa fidelidade, primeiramente
 para mobile.
 
-![protótipo](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/main/src/Assets/baixaFidelidade.png)
+![protótipo](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/baixaFidelidade.png)
 
 Fizemos ajustes no protótipo, pois identificamos, atraves de pesquisa com usuários, que algumas alterações seriam
 benéficas e trariam mais agilidade a aplicação e tornaria a ferramenta mais fácil para os funcionários.
@@ -60,7 +60,7 @@ Abaixo o protótipo de alta fidelidade, disponivel para mobile, tablete e deskto
 
 A paleta de cores foi escolhida com tons que remetem ao sertão nordestino brasileiro.
 
-![paleta](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/main/src/Assets/paleta.png)
+![paleta](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/paleta.png)
 
 ## 5.Logotipo
 
