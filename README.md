@@ -218,7 +218,7 @@ Abaixo link de nosso repositório e linkedin.
 
 |                              Letícia Aniceto                             	      |                                 Paloma Queiroz                                	|
 |:------------------------------------------------------------------------------: |:------------------------------------------------------------------------------:	|
-|<img alt="Leticia" src="src/Assents/leticiaDev.png" height='200px'></img> | <img alt="Paloma" src="src/Assents/palomaDev.png" height='200px'></img> 	|
+|<img alt="Leticia" src="src/Assets/leticiaDev.png" height='200px'></img> | <img alt="Paloma" src="src/Assets/palomaDev.png" height='200px'></img> 	|
 | <a href='https://github.com/leticia-aniceto'><img alt='GitHub - Leticia' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/leticia-braga-aniceto/'><img alt='LinkedIn - Leticia' src='app/src/images/readme/linkedin_badge.png'></img></a>  |  <a href='https://github.com/palomacqueiroz'><img alt='GitHub - Paloma' src='app/src/images/readme/github_badge.png'></img></a> <a href='https://www.linkedin.com/in/palomac-queiroz/'><img alt='LinkedIn - Paloma' src='app/src/images/readme/linkedin_badge.png'></img></a> 	|          	|
 </div>
 
