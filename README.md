@@ -126,9 +126,9 @@ Com base nas histórias dos usuários, organizamos o passo a passo do que deveri
 
 Resultado da aplicação após finalizarmos as 4 histórias de usuários.
 
-![login]()
+![login](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/telaLogin.png)
 
-![cadastro]()
+![cadastro](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/telaCadastro.png)
 
 ![menu](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/menuCardapio.png)
 
@@ -136,7 +136,7 @@ Resultado da aplicação após finalizarmos as 4 histórias de usuários.
 
 ![status](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/statuspedido.png)
 
-![notFound]()
+![notFound](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/notFound.png)
 
 ## 7.UI e UX
 
