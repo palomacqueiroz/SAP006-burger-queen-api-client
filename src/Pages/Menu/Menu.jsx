@@ -7,7 +7,6 @@ import {
   SelectedItem,
   Total,
 } from "../../components/ItemsMenu/ItemsMenu";
-// import {SubmitToKitchenConfirm} from '../../components/ItemsMenu/PopUpConfirm'
 import MenuOptionsNavBar from "../../components/Footer/NavBarOptions";
 import GeneralButton from "../../components/Button/Button";
 // import MealNavBar from '../../components/Header/MealNavBar'

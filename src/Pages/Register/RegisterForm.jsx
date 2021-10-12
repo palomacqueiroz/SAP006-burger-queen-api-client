@@ -7,8 +7,6 @@ import { getRouteByRole } from '../../routes/redirections';
 
 import GeneralButton from '../../components/Button/Button';
 import { Input }  from '../../components/Input/Input.jsx';
-// import register from '../../Assets/register.png';
-import vixiLogo from '../../Assets/vixi-no-bg.png';
 import vixiDesktop from '../../Assets/logodesktop.png';
 import './register.scss';
 
@@ -54,12 +52,11 @@ const Register = () => {
     
     return (
         <section className="mainBox">
-            <img className="image" src={vixiLogo} alt='icon-register' />
             <img className="imageDesktop" src={vixiDesktop} alt='icon-register' />
             <div className="signUpBox">
                 <p className="titleRegister">Crie sua conta</p>
                 <form className="form">
-                    <Input variant="primary"
+                    <Input variant="secondary"
                         type='text' 
                         id='name'
                         name='fullName'
@@ -68,7 +65,7 @@ const Register = () => {
                         placeholder='Nome completo' 
                         errormessage='Por favor, insira um nome válido.' />
                     {errors.fullName && <p className='error'>{errors.fullName}</p>}
-                    <Input variant="primary"
+                    <Input variant="secondary"
                         type='email' 
                         id='email' 
                         name='email'
@@ -77,7 +74,7 @@ const Register = () => {
                         placeholder='E-mail'
                         errormessage='Por favor, insira um e-mail válido.' />
                     {errors.email && <p className='error errorsMessage'>{errors.email}</p>}
-                    <Input variant="primary"
+                    <Input variant="secondary"
                         type='password' 
                         id='password' 
                         name='password'
@@ -86,7 +83,7 @@ const Register = () => {
                         placeholder='Senha'
                         errormessage='Por favor, insira uma senha válida.' />
                     {errors.password && <p className='error errorsMessage'>{errors.password}</p>}
-                    <Input variant="primary"
+                    <Input variant="secondary"
                         type='password'
                         id='confirm-password' 
                         name='confirmPassword'
