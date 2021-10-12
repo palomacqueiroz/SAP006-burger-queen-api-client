@@ -130,11 +130,11 @@ Resultado da aplicação após finalizarmos as 4 histórias de usuários.
 
 ![cadastro]()
 
-![menu]()
+![menu](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/menuCardapio.png)
 
 ![kitchen]()
 
-![status]()
+![status](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/statuspedido.png)
 
 ![notFound]()
 
