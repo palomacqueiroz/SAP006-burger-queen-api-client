@@ -224,7 +224,8 @@ da aplicação e identificar as possíveis melhorias que poderíamos fazer.
   <img align="center" alt="SCSS" height="30" width="40" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
 </div>
 
-###Deploy
+### Deploy
+
 <div style="display: inline_block"><br>
   <img align="center" alt="netlify" height="30" width="40"src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white">
 </div>
