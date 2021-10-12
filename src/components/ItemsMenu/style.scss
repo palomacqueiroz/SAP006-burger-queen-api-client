@@ -1,8 +1,6 @@
-$white: #FFFF;
-$btnColor: #008F83;
-$nameItemColor: #5168EE;
 $fontFamily: 'Montserrat', sans-serif;
 $font600: 600;
+$white: #FFFF;
 
 // CartList.jsx
 .section-ordersList {
@@ -22,7 +20,7 @@ $font600: 600;
     }
 
     @media screen and (min-width: 801px){
-        // background: #e9d4ac69;
+        background: #e9d4ac69;
         border-radius: 42px 0px 0px 42px;
         width: auto;
         height: 81vh;
@@ -71,7 +69,6 @@ $font600: 600;
         border-radius: 6.42px;
         font-size: 0.5rem;
     }
-    
 }
 
 .product-info.name {
@@ -79,7 +76,6 @@ $font600: 600;
     font-weight: bold;
     font-size: 2.5em;
     font-family: 'Montserrat', sans-serif;
-    // color: $nameItemColor;
     color: #37211d;
 }
 
@@ -93,7 +89,6 @@ $font600: 600;
 .product-info.flavor, .product-info.complement {
     font-size: 2em;
     color: #8C2A14;
-
 }
 
 .price {
@@ -129,7 +124,6 @@ $font600: 600;
 }
 
 .btn-addItem {
-    // background: $btnColor;
     background: #D9B26A;
     border-radius: 19.9951px 6.42064px 6.42064px 6.42064px;
     font-family: $fontFamily;
@@ -140,7 +134,7 @@ $font600: 600;
     align-items: center;
     justify-content: center;
     display: flex;
-    color: $white;
+    color: #FFFFFF;
     border: none;
     height: 5vh;
     width: 5vh;
@@ -186,7 +180,7 @@ $font600: 600;
 }
 
 .btn-addItem-qtd {
-    background: $btnColor;
+    // background: $btnColor;
     border-radius: 6.42064px;
     font-weight: $font600;
     font-size: 1.4rem;

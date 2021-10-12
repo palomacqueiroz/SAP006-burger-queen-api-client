@@ -1,5 +1,4 @@
 import { TimeOrPrepareTime } from "../Time/TimeOrPrepareTime";
-// import { convertDate, convertTime } from "../../services/data";
 import "./style.scss";
 
 export const OrderCardBase = ({

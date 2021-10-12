@@ -1,13 +1,14 @@
 
 @mixin inputPros {
-    width:70%;
-    height:40px;
+    width: 75%;
+    height: 4vh;
     top: 200px;
-    border-radius:10px;
+    border-radius: 10px;
     border: 1px solid #a89583a4;
     margin: 5px;
-    padding: 5px;
-    font-weight:bold;
+    padding: 1vh;
+    font-weight: 500;
+    font-size: 1.3rem;
 }
 
 .input {
@@ -22,4 +23,9 @@
    .input.primary{
        width: 50%;
    }
+
+   .input.secondary {
+    width: 60%;
+    border: none;
+}
 }
