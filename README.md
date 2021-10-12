@@ -227,7 +227,7 @@ da aplicação e identificar as possíveis melhorias que poderíamos fazer.
 ### Deploy
 
 <div style="display: inline_block"><br>
-  <img align="center" alt="netlify" height="30" width="40"src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white">
+  <img align="center" alt="netlify" height="30" width="50"src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white">
 </div>
 
 ## 10.Desenvolvedoras
