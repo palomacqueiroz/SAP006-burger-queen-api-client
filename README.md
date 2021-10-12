@@ -132,7 +132,7 @@ Resultado da aplicação após finalizarmos as 4 histórias de usuários.
 
 ![menu](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/menuCardapio.png)
 
-![kitchen]()
+![kitchen](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/cozinha.png)
 
 ![status](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/statuspedido.png)
 
