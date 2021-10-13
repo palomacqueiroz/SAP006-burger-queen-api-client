@@ -126,17 +126,17 @@ Com base nas histórias dos usuários, organizamos o passo a passo do que deveri
 
 Resultado da aplicação após finalizarmos as 4 histórias de usuários.
 
-![login]()
+![login](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/telaLogin.png)
 
-![cadastro]()
+![cadastro](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/telaCadastro.png)
 
-![menu]()
+![menu](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/menuCardapio.png)
 
-![kitchen]()
+![kitchen](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/cozinha.png)
 
-![status]()
+![status](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/statuspedido.png)
 
-![notFound]()
+![notFound](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/notFound.png)
 
 ## 7.UI e UX
 
@@ -221,7 +221,12 @@ da aplicação e identificar as possíveis melhorias que poderíamos fazer.
   <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
   <img align="center" alt="JS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">  
   <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="SCSS" height="30" width="40" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+  <img align="center" alt="SCSS" height="30" width="50" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+</div>
+
+### Deploy
+<div style="display: inline_block"><br>
+  <img align="center" alt="netlify" height="30" width="55"src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white">
 </div>
 
 ## 10.Desenvolvedoras
