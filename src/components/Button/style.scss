@@ -15,12 +15,12 @@ $font-1em: 1em;
     text-transform: uppercase;
     justify-content: center;
     border: none;
-    border-radius: 10px;
     cursor: pointer;
 }
 
 .button {
     @include buttonProps;
+    border-radius: 10px;
     background-color: $btn-white;       
     
     a {
@@ -134,8 +134,11 @@ $font-1em: 1em;
     width: max-content;
 }
 
-.button.tenth {
+button.button.tenth {
+    border: none;
     border-radius: none;
+    width: 12vh;
+    background-color: #e5e5e570;
     
 }
 

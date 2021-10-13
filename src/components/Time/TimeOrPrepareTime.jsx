@@ -6,7 +6,8 @@ export const TimeOrPrepareTime = ({ createdAt, processedAt, updatedAt  }) => {
       <>
         <p className='orderLabel'>Pedido feito em: {getTime(createdAt)}</p>{' '}
         <label className='orderLabel'>Tempo de preparo:</label>{' '}
-        <p> {getInterval(createdAt, updatedAt)} </p>
+        <p className='orderLabel'> {getInterval(createdAt, updatedAt)} </p>
+        <hr className="line-card"/>
       </>
     );
   }

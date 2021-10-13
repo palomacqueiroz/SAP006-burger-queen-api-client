@@ -52,16 +52,13 @@ export const OrderCardBase = ({
 
       <section className="order-card-buttons">
         {orderStatus === "pending" && (
-          <button onClick={updateOrderToProcessing}>Preparando</button>
+          <button className="btn-order-steps pending" onClick={updateOrderToProcessing}>Preparando</button>
         )}
         {orderStatus === "processing" && (
-          <button onClick={updateOrderToReady}>Pronto</button>
+          <button className="btn-order-steps processing" onClick={updateOrderToReady}>Pronto</button>
         )}
-        {/* {orderStatus === "ready" && (
-          <button onClick={updateOrderToDone}>Servido</button>
-        )} */}
         {orderStatus === "ready" && (
-          <button onClick={updateOrderToClient}>Entregue</button>
+          <button className="btn-order-steps ready" onClick={updateOrderToClient}>Entregue</button>
         )}
       </section>
     </section>
