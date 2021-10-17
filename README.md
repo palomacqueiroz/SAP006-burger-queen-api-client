@@ -138,13 +138,9 @@ Resultado da aplicação após finalizarmos as 4 histórias de usuários.
 
 Abaixo deixamos login e senha de contas já cadastradas para que possam utilizar a aplicação.
 
-- cozinha
-Login: cozinha@email.com
-Senha:123456
+- Cozinha - cozinha@email.com - Senha: 123456
 
-- Salão
-Login: salao@email.com
-Senha:123456
+- Salão - salao@email.com - Senha: 123456
 
 ## 7.UI e UX
 
