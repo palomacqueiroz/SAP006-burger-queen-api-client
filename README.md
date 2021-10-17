@@ -54,13 +54,9 @@ para mobile.
 
 Fizemos ajustes no protótipo, pois identificamos, atraves de pesquisa com usuários, que algumas alterações seriam
 benéficas e trariam mais agilidade a aplicação e tornaria a ferramenta mais fácil para os funcionários.
-Abaixo o protótipo de alta fidelidade, disponivel para mobile, tablete e desktop.
+Abaixo o protótipo de alta fidelidade, tablete e desktop.
 
-![tablete]()
-
-![mobile]()
-
-![desktop]()
+![protótipo](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/prot%C3%B3tipo.png)
 
 ## 4. Paleta de Cores
 
@@ -68,9 +64,9 @@ A paleta de cores foi escolhida com tons que remetem ao sertão nordestino brasi
 
 ![paleta](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/paleta.png)
 
-## 5.Logotipo
+## 5.Logotipo e Nome do Restaurante
 
-As imagens no logo foram escolhidas para homenagiar o sertão nordestino brasileiro.
+As imagens no logo e o nome do restaurante, foram escolhidos para homenagiar nossos pais, nascidos nos estados de Pernambuco e Piaui e também o sertão nordestino brasileiro.
 
 ![logotipo](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/vixiLogo.png)
 
@@ -78,7 +74,7 @@ As imagens no logo foram escolhidas para homenagiar o sertão nordestino brasile
 
  - A aplicação foi desenvolvida como SPA (single-page application), para que o usuário tenha a experiência similar à de um aplicativo para desktop.
 
-- É responsiva para tablets utilizados na horizontal, mobile e Desktop.
+- É responsiva para tablets utilizados na horizontal e Desktop.
 
 - Utilizamos React JS para componentizar todo o site. Isso mantém a aplicação com alto desempenho e também permite que os componentes sejam reutilizados, gerando um código de fácil manutenção por qualquer desenvolvedor.
 
@@ -138,6 +134,14 @@ Resultado da aplicação após finalizarmos as 4 histórias de usuários.
 
 ![notFound](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/notFound.png)
 
+## Acessos
+
+Abaixo deixamos login e senha de contas já cadastradas para que possam utilizar a aplicação.
+
+- Cozinha - cozinha@email.com - Senha: 123456
+
+- Salão - salao@email.com - Senha: 123456
+
 ## 7.UI e UX
 
 ## Principais objetivos de UI: 
@@ -158,10 +162,13 @@ Resultado da aplicação após finalizarmos as 4 histórias de usuários.
 
 - Ouvir os usuários e compreender como está a sua experiência com a aplicação.
 
-Fizemos uma pesquisa com os usuários para sabermos sua opinião sobre a usabilidade, layout e funcionalidades
-da aplicação e identificar as possíveis melhorias que poderíamos fazer.
+Fizemos uma pesquisa com os usuários para sabermos as opiniões sobre a usabilidade, layout e funcionalidades da aplicação e identificar as possíveis melhorias que poderíamos fazer.
 
-### Feedback e Sugestões de Melhorias
+## Feedback e Sugestões de Melhorias
+
+- Gostaram da paleta de cores, nome do restaurante e acharam fácil utilizar a aplicação.
+- Fazer responsividade para mobile.
+- Dividir lanches simples de duplos.
 
 ## 8.Objetivos de aprendizagem
 

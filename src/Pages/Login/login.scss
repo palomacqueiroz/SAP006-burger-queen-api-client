@@ -1,4 +1,3 @@
-// $bg-color:rgba(244, 244, 244, 0.52);
 $bg-color:#e9d4ac;
 $bg-white: rgb(255,255,255);
 $text-color: rgb(0 , 0 , 0);
@@ -10,7 +9,6 @@ $font-family: 'Montserrat', sans-serif;
 }
 
 .mainBoxLogin {
-    // background: #F2F0D8;
     background-image: url(../../Assets/paper.jpg);
     background-repeat: repeat;
     height: 100%;
@@ -99,7 +97,10 @@ $font-family: 'Montserrat', sans-serif;
     .imgLogo {
         width: 60vw;
         height: 70vh;
-        margin: -20px;
+        margin: -60px;
+    }
+    .title {
+        font-size: 1.3em;
     }
 }
 

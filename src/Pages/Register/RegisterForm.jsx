@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
 import { createUser } from '../../services/auth';
 import validation from '../../services/errors';
 import { getRouteByRole } from '../../routes/redirections';
-
 import GeneralButton from '../../components/Button/Button';
 import { Input }  from '../../components/Input/Input.jsx';
 import vixiDesktop from '../../Assets/logodesktop.png';

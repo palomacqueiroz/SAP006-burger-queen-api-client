@@ -1,7 +1,6 @@
 .main {
     display: flex;
-    flex-direction: row;
-    
+    flex-direction: row;    
 }
 
 .left-side {
@@ -26,7 +25,6 @@
     align-items: center;
     flex-wrap: wrap;
     margin-top: 2vh;
-
 }
 
 .select-menu-perMeal {
@@ -34,9 +32,9 @@
     justify-content: space-around;
     margin: 2vh 0vh 3vh 0vh;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         display: none;
-    }
+    } 
 
     @media screen and (min-width: 801px){
         width: 70%;
@@ -49,10 +47,18 @@
     align-items: center;
     font-weight: 600;
     font-size: 1.3rem;
+
+    @media (max-width: 800px) {
+        font-size: 15px;    
+    }
 }
 
 .title-orders {
     font-size: 1.4rem;
+
+    @media (max-width: 800px) {
+    font-size: 1em;    
+    }
 }
 
 .text-orders {
@@ -77,9 +83,17 @@
 .input-order.table {
     width: 20%;
     font-size: 1.3rem;
+
+    @media (max-width: 800px) {
+        font-size: 1em;    
+    }    
 }
 
 .input-order.clientName {
     width: 60%;
     font-size: 1.3rem;
+
+    @media (max-width: 800px) {
+        font-size: 1em;    
+    }
 }

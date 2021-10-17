@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
 import { loginWithEmail } from '../../services/auth';
-import { getRouteByRole } from '../../routes/redirections'
-
+import { getRouteByRole } from '../../routes/redirections';
 import GeneralButton from '../../components/Button/Button';
 import { Input } from '../../components/Input/Input';
-
 import './login.scss'
 import vixiCangaço from '../../Assets/vixiLogoBone.png';
 
@@ -14,8 +11,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
-
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         return Login();

@@ -1,4 +1,5 @@
 import { TimeOrPrepareTime } from "../Time/TimeOrPrepareTime";
+import GeneralButton from "../Button/Button"
 import "./style.scss";
 
 export const OrderCardBase = ({
@@ -52,16 +53,13 @@ export const OrderCardBase = ({
 
       <section className="order-card-buttons">
         {orderStatus === "pending" && (
-          <button onClick={updateOrderToProcessing}>Preparando</button>
+          <GeneralButton variant="eleventh" onClick={updateOrderToProcessing}>Preparando</GeneralButton>
         )}
         {orderStatus === "processing" && (
-          <button onClick={updateOrderToReady}>Pronto</button>
+          <GeneralButton variant="eleventh" onClick={updateOrderToReady}>Pronto</GeneralButton>
         )}
-        {/* {orderStatus === "ready" && (
-          <button onClick={updateOrderToDone}>Servido</button>
-        )} */}
         {orderStatus === "ready" && (
-          <button onClick={updateOrderToClient}>Entregue</button>
+          <GeneralButton variant="eleventh" onClick={updateOrderToClient}>Entregue</GeneralButton>
         )}
       </section>
     </section>
