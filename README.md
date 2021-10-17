@@ -56,7 +56,7 @@ Fizemos ajustes no protótipo, pois identificamos, atraves de pesquisa com usuá
 benéficas e trariam mais agilidade a aplicação e tornaria a ferramenta mais fácil para os funcionários.
 Abaixo o protótipo de alta fidelidade, tablete e desktop.
 
-![protótipo]()
+![protótipo](https://github.com/palomacqueiroz/SAP006-burger-queen-api-client/blob/feat/readme/src/Assets/prot%C3%B3tipo.png)
 
 ## 4. Paleta de Cores
 
