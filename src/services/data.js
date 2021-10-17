@@ -1,7 +1,5 @@
 import { getStorageKey } from "./storage";
 
-// token menu: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxlbGVAbGVsZXQuY29tIiwiaWQiOjIyNjgsImlhdCI6MTYzMjE2NTkwMCwiZXhwIjoxNjYzNzIzNTAwfQ.QX2JUBulrIlNPIHpcBfbP3gGZ8D3Lj61JArdHBamocU
-
 export const getProducts = async () => {
   const token = getStorageKey();
 

@@ -52,6 +52,6 @@ export const Total = ({ cartItems }) => {
     const newTotal = cartItems.reduce((acc, currentValue) => 
         acc + (currentValue.price * currentValue.qtd), 0);
   
-    return <div className="CartTotal"><p className="total-value">Total: R$ {newTotal}</p></div>;
+    return <div className="cartTotal">Total: R$ {newTotal}</div>;
 };
   

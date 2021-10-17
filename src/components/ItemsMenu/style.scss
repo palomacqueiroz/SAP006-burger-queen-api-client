@@ -2,7 +2,6 @@ $fontFamily: 'Montserrat', sans-serif;
 $font600: 600;
 $white: #FFFF;
 
-// CartList.jsx
 .section-ordersList {
     border-radius: 6.47px;
     background: #e9d4ac69;
@@ -41,9 +40,6 @@ $white: #FFFF;
     font-size: 0.3rem;
 }
 
-// ItemCard.jsx
-
-    // ItemCard
 .item-card {
     height: 25vh;
     width: 19vh;
@@ -61,6 +57,11 @@ $white: #FFFF;
     background-color: $white;
     box-shadow: 0px 5.13419px 5.13419px rgba(0, 0, 0, 0.25);
 
+    @media (max-width: 800px) {
+        width: 26vh;
+        margin: 1vh;
+    }
+
     @media screen and (min-width:801px) {
         height: 35vh;
         width: 30vh;
@@ -74,21 +75,29 @@ $white: #FFFF;
 .product-info.name {
     margin: 1.5vh 0vh;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 2em;
     font-family: 'Montserrat', sans-serif;
     color: #37211d;
+
+    @media (max-width: 800px) {
+        font-size: 12px;
+    }
 }
 
 .burger-info{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 100%;
+    width: 100%;    
 }
 
 .product-info.flavor, .product-info.complement {
     font-size: 2em;
     color: #8C2A14;
+
+    @media (max-width: 800px) {
+        font-size: 11px;
+    }
 }
 
 .price {
@@ -98,6 +107,10 @@ $white: #FFFF;
     font-size: 2rem;
     color: #44433E;
     text-align: center;
+
+    @media (max-width: 800px) {
+        font-size: 1em;
+    }
 }
 
 .img-product-info {
@@ -154,7 +167,6 @@ $white: #FFFF;
     align-items: center;
 }
 
-    // SelectedItem
 .itemSelected {
     display: flex;
     flex-direction: row;
@@ -169,6 +181,10 @@ $white: #FFFF;
 .info-item {
     width: 40%;
     font-size: 1.1rem;
+
+    @media (max-width: 800px) {
+        font-size: 12px;
+    }
 }
 
 .buttons-qtd {
@@ -177,6 +193,10 @@ $white: #FFFF;
     align-items: center;
     justify-content: space-between;
     font-size: 1.4rem;
+
+    @media (max-width: 800px) {
+       font-size: 1rem;
+    }
 }
 
 .btn-addItem-qtd {
@@ -199,4 +219,12 @@ $white: #FFFF;
 .total-value {
     font-size: 1.5rem;
     font-weight: 700;
+}
+.cartTotal {
+    font-size: 1.5em;
+    font-weight: bolder;
+
+    @media (max-width: 800px) {
+        font-size: 1em;
+    }
 }

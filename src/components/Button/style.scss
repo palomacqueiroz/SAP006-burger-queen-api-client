@@ -1,9 +1,7 @@
-// color
 $btn-blue: rgb(171, 218, 214);
 $btn-white: rgb(255, 255, 255);
 $text-color: rgb(0 , 0 , 0);
 $font-1em: 1em;
-
 
 @mixin buttonProps() {
     width: 150px;
@@ -39,6 +37,14 @@ $font-1em: 1em;
     font-size: 1.7rem;
     margin: 4rem 4rem 3rem;
     padding: 0.3rem;
+
+    @media (max-width: 800px) {
+        width: 50%;
+        width: 50%;
+        font-size: 1.1rem;
+        padding: 1vh;
+        margin-bottom: 10px; 
+    }
 }
 
 .button.secondary{
@@ -47,11 +53,19 @@ $font-1em: 1em;
     width: 70%;
     font-size: $font-1em;
     margin: 2rem 4rem 3rem;
+
+    @media screen and (min-width: 768px){         
+        width: 50%;
+        width: 50%;
+        font-size: 1.1rem;
+        padding: 1vh;
+        background-color: rgb(167, 108, 99);
+        margin-bottom: 10px;       
+    }
 }
 
 .button.third {
     @include buttonProps;
-    // color: #008F83;
     color: rgb(55,33,29);
     width: max-content;
     text-align: center;
@@ -69,10 +83,6 @@ $font-1em: 1em;
     color: $btn-white;
 }
 
-// .button.third::after {
-//     border: 1px solid #008F83;
-// }
-
 .button.fourth {
     @include buttonProps;
     color: #008F83;
@@ -86,7 +96,6 @@ $font-1em: 1em;
 
 .button.fifth {
     @include buttonProps;
-    // background-color: #008F83;
     background-color: #8C2A14;
     color: white;
     width: max-content;
@@ -95,6 +104,12 @@ $font-1em: 1em;
     justify-content: center;
     display: flex;
     padding: 2.5vh 1vh;
+
+    @media (max-width: 800px) {
+        width: 170px;
+        height: 42px;
+        font-size: 15px;
+    }
 }
 
 .button.sixth {
@@ -139,13 +154,26 @@ button.button.tenth {
     border-radius: none;
     width: 12vh;
     background-color: #e5e5e500;
+
+    @media (max-width: 800px) {
+        width: 100px;
+        height: 30px;
+    }    
 }
 
-@media screen and (min-width: 768px){
-    .button.secondary{ 
-        margin: 2rem;
-    }
+.button.eleventh {
+    font-family: Montserrat;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    height: 32px;
+    border: 1px solid black;
+    background-color: #e9d4ac;    
 }
+
+
 @media screen and (min-width: 1180px){
     .button.button.secondary{
         width: 50%;

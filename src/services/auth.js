@@ -1,5 +1,4 @@
 import { saveStorageKey } from "./storage";
-// const token = localStorage.getItem('token')
 
 export const createUser = async (user) => {
     const body = {

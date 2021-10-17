@@ -36,6 +36,11 @@
     padding: 0.8rem;
 }
 
+.order-card-buttons{   
+    display: flex;
+    justify-content: center;    
+}
+
 .order-products {
     display: flex;
     align-items: flex-start;

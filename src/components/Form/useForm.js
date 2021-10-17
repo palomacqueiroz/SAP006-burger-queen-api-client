@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import validation from "../../services/errors"
+import createUser from "../../services/auth"
 
 const useForm = () => {
     const [values, setValues] = useState({
@@ -21,7 +23,7 @@ const useForm = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        setErrors(validation(values));
+        setErrors(validation(errors));
 
         createUser(values)
             .then((json) => {
