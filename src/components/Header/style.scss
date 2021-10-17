@@ -47,6 +47,10 @@
     font-weight: 600;
     font-size: 2rem;
     color: #000;
+
+    @media (max-width: 800px) {
+        font-size: 1.5rem;
+    }
 }
 
 .header-button {
@@ -72,7 +76,12 @@ button.header-button {
 }
 
 img.logoKitcken {
-    width: 47vh;
-    height: 36vh;
-    padding-top: 3vh;
+    width: 38vh;
+    height: 11vh;
+    padding-top: 2vh;
+
+    @media (max-width: 800px) {
+        width: 33vh;
+        height: 9vh;        
+    }
 }

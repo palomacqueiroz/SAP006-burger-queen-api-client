@@ -39,8 +39,11 @@ $font-1em: 1em;
     padding: 0.3rem;
 
     @media (max-width: 800px) {
-        width: 45%;
-        height: 7vh;
+        width: 50%;
+        width: 50%;
+        font-size: 1.1rem;
+        padding: 1vh;
+        margin-bottom: 10px; 
     }
 }
 
@@ -147,7 +150,12 @@ $font-1em: 1em;
 }
 
 .button.tenth {
-    border-radius: none;    
+    border-radius: none;
+
+    @media (max-width: 800px) {
+        width: 100px;
+        height: 30px;
+    }    
 }
 
 .button.eleventh {

@@ -9,7 +9,6 @@ import {
 } from "../../components/ItemsMenu/ItemsMenu";
 import MenuOptionsNavBar from "../../components/Footer/NavBarOptions";
 import GeneralButton from "../../components/Button/Button";
-// import MealNavBar from '../../components/Header/MealNavBar'
 import { Header } from "../../components/Header/Header";
 import "./style.scss";
 
@@ -130,7 +129,6 @@ const Menu = () => {
     <>
       <Header />
       <main className="main">
-        {/* <MealNavBar /> */}
         <div className="left-side">
           <header className="select-menu-perMeal">
             <GeneralButton
@@ -233,48 +231,3 @@ const Menu = () => {
 };
 
 export default Menu;
-
-// Rafa's alternatives functions for addItem and removeItem:
-// const removeItem = (item) => {
-//     if (item.qtd > 1) {
-//     return setItemsList((prevItems) => prevItems.map((prevItem) => {
-//         if (prevItem.id === item.id) {
-//         return {
-//             ...prevItem,
-//             qtd: prevItem.qtd - 1
-//         }
-//         }
-//         return prevItem
-//     }))
-//     }
-
-//     return setItemsList((prevItems) => prevItems
-//     .filter((prevItem) => prevItem.id !== item.id)
-//     )
-// }
-
-// const addItem = (item) => {
-//     const hasElement = itemsList.some(({ id }) => id === item.id);
-
-//     if (hasElement) {
-//       return setItemsList((prevItems) => prevItems.map((prevItem) => {
-//         if (prevItem.id === item.id) {
-//           return {
-//             ...prevItem,
-//             qtd: prevItem.qtd + 1
-//           }
-//         }
-//         return prevItem
-//       }))
-//     }
-
-//     const newItem = {
-//       id: item.id,
-//       name: item.name,
-//       price: item.price,
-//       flavor: item.flavor,
-//       complement: item.complement,
-//       qtd: 1,
-//     }
-//     return setItemsList([...itemsList, newItem])
-//   }
