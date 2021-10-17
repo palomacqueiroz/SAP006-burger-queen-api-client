@@ -61,6 +61,11 @@ $white: #FFFF;
     background-color: $white;
     box-shadow: 0px 5.13419px 5.13419px rgba(0, 0, 0, 0.25);
 
+    @media (max-width: 800px) {
+        width: 26vh;
+        margin: 1vh;
+    }
+
     @media screen and (min-width:801px) {
         height: 35vh;
         width: 30vh;
@@ -77,6 +82,10 @@ $white: #FFFF;
     font-size: 2em;
     font-family: 'Montserrat', sans-serif;
     color: #37211d;
+
+    @media (max-width: 800px) {
+        font-size: 12px;
+    }
 }
 
 .burger-info{
@@ -84,11 +93,16 @@ $white: #FFFF;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
+    
 }
 
 .product-info.flavor, .product-info.complement {
     font-size: 2em;
     color: #8C2A14;
+
+    @media (max-width: 800px) {
+        font-size: 11px;
+    }
 }
 
 .price {
@@ -98,6 +112,10 @@ $white: #FFFF;
     font-size: 2rem;
     color: #44433E;
     text-align: center;
+
+    @media (max-width: 800px) {
+        font-size: 1em;
+    }
 }
 
 .img-product-info {
@@ -169,6 +187,10 @@ $white: #FFFF;
 .info-item {
     width: 40%;
     font-size: 1.1rem;
+
+    @media (max-width: 800px) {
+        font-size: 12px;
+    }
 }
 
 .buttons-qtd {
@@ -177,6 +199,10 @@ $white: #FFFF;
     align-items: center;
     justify-content: space-between;
     font-size: 1.4rem;
+
+    @media (max-width: 800px) {
+       font-size: 1rem;
+    }
 }
 
 .btn-addItem-qtd {
@@ -194,4 +220,13 @@ $white: #FFFF;
     height: 4vh;
     width: 4vh;
     cursor: pointer;
+}
+
+.cartTotal {
+    font-size: 1.5em;
+    font-weight: bolder;
+
+    @media (max-width: 800px) {
+        font-size: 1em;
+    }
 }

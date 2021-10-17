@@ -41,6 +41,7 @@ $font-family: 'Montserrat', sans-serif;
     justify-content: space-evenly;
     margin-top: 1.5rem;   
     width: 55%; 
+    
 }
 
 .input-radio {
@@ -86,12 +87,26 @@ $font-family: 'Montserrat', sans-serif;
         height: 70vh;
         width: 60vw;
     }
+    .titleRegister {
+        font-size: 1rem;
+    }
 
     .signUpBox{
         border-radius: 20px;
         width: 40vw;
         height: 65vh;
     }
+    .inputRadioBox {
+        width: auto;
+    }
+    .labelRadioInput{
+        font-size: 1rem;
+    }
+    .phraseRegister{
+        font-size: 15px;
+    }
+
+
 }
 
 @media screen and (min-width: 1190px){

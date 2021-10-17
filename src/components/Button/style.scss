@@ -39,6 +39,11 @@ $font-1em: 1em;
     font-size: 1.7rem;
     margin: 4rem 4rem 3rem;
     padding: 0.3rem;
+
+    @media (max-width: 800px) {
+        width: 45%;
+        height: 7vh;
+    }
 }
 
 .button.secondary{
@@ -47,6 +52,15 @@ $font-1em: 1em;
     width: 70%;
     font-size: $font-1em;
     margin: 2rem 4rem 3rem;
+
+    @media screen and (min-width: 768px){         
+        width: 50%;
+        width: 50%;
+        font-size: 1.1rem;
+        padding: 1vh;
+        background-color: rgb(167, 108, 99);
+        margin-bottom: 10px;       
+    }
 }
 
 .button.third {
@@ -95,6 +109,12 @@ $font-1em: 1em;
     justify-content: center;
     display: flex;
     padding: 2.5vh 1vh;
+
+    @media (max-width: 800px) {
+        width: 170px;
+        height: 42px;
+        font-size: 15px;
+    }
 }
 
 .button.sixth {
@@ -150,11 +170,7 @@ $font-1em: 1em;
     background-color: #e9d4ac;    
 }
 
-@media screen and (min-width: 768px){
-    .button.secondary{ 
-        margin: 2rem;
-    }
-}
+
 @media screen and (min-width: 1180px){
     .button.button.secondary{
         width: 50%;
