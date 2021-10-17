@@ -34,9 +34,9 @@
     justify-content: space-around;
     margin: 2vh 0vh 3vh 0vh;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         display: none;
-    }
+    } 
 
     @media screen and (min-width: 801px){
         width: 70%;
