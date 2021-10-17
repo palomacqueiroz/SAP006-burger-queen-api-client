@@ -2,7 +2,6 @@ $fontFamily: 'Montserrat', sans-serif;
 $font600: 600;
 $white: #FFFF;
 
-// CartList.jsx
 .section-ordersList {
     border-radius: 6.47px;
     background: #e9d4ac69;
@@ -41,9 +40,6 @@ $white: #FFFF;
     font-size: 0.3rem;
 }
 
-// ItemCard.jsx
-
-    // ItemCard
 .item-card {
     height: 25vh;
     width: 19vh;
@@ -92,8 +88,7 @@ $white: #FFFF;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 100%;
-    
+    width: 100%;    
 }
 
 .product-info.flavor, .product-info.complement {
@@ -172,7 +167,6 @@ $white: #FFFF;
     align-items: center;
 }
 
-    // SelectedItem
 .itemSelected {
     display: flex;
     flex-direction: row;
@@ -206,7 +200,6 @@ $white: #FFFF;
 }
 
 .btn-addItem-qtd {
-    // background: $btnColor;
     border-radius: 6.42064px;
     font-weight: $font600;
     font-size: 1.4rem;

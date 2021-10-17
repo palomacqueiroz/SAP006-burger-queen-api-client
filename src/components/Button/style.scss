@@ -1,9 +1,7 @@
-// color
 $btn-blue: rgb(171, 218, 214);
 $btn-white: rgb(255, 255, 255);
 $text-color: rgb(0 , 0 , 0);
 $font-1em: 1em;
-
 
 @mixin buttonProps() {
     width: 150px;
@@ -65,7 +63,6 @@ $font-1em: 1em;
 
 .button.third {
     @include buttonProps;
-    // color: #008F83;
     color: rgb(55,33,29);
     width: max-content;
     text-align: center;
@@ -83,10 +80,6 @@ $font-1em: 1em;
     color: $btn-white;
 }
 
-// .button.third::after {
-//     border: 1px solid #008F83;
-// }
-
 .button.fourth {
     @include buttonProps;
     color: #008F83;
@@ -100,7 +93,6 @@ $font-1em: 1em;
 
 .button.fifth {
     @include buttonProps;
-    // background-color: #008F83;
     background-color: #8C2A14;
     color: white;
     width: max-content;
