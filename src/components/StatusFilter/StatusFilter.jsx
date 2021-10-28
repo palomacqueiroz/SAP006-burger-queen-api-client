@@ -13,13 +13,13 @@ export const StatusFilter = ({
     return (
         <nav className="statusFilter-bar">
             <GeneralButton variant="tenth" onClick={pendingOrders}>
-                <Icon icon="akar-icons:circle-alert-fill" color="#b42121" />
+                <Icon className="icon-bar" icon="akar-icons:circle-alert-fill" color="#b42121" />
             </GeneralButton>
             <GeneralButton variant="tenth" onClick={preparingOrders}>
-                <Icon icon="akar-icons:triangle-alert-fill" color="#ffdca8" />
+                <Icon className="icon-bar" icon="akar-icons:triangle-alert-fill" color="rgb(255 246 35)"/>
             </GeneralButton>
             <GeneralButton variant="tenth" onClick={doneOrders}>
-                <Icon icon="akar-icons:circle-check-fill" color="#aad253" />
+                <Icon className="icon-bar" icon="akar-icons:circle-check-fill" color="#587b0a" />
             </GeneralButton>
             <GeneralButton variant="tenth" onClick={allOrders}>
                 <img className="eye" src={eye} alt="all orders" />

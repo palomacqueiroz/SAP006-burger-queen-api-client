@@ -200,6 +200,7 @@ $white: #FFFF;
 }
 
 .btn-addItem-qtd {
+    background-color: #b26251;
     border-radius: 6.42064px;
     font-weight: $font600;
     font-size: 1.4rem;
@@ -215,6 +216,10 @@ $white: #FFFF;
     cursor: pointer;
 }
 
+.total-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 .cartTotal {
     font-size: 1.5em;
     font-weight: bolder;
